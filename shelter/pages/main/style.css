@@ -53,6 +53,8 @@
     /* color-light-xl */
     
     color: #FFFFFF;
+    padding-top: 11px;
+    padding-left: 4px;
   }
 
   li {
@@ -69,7 +71,8 @@
   ul {
       display: flex;
       flex-direction: row;
-      justify-content: space-around;   
+      /* justify-content: space-around;    */
+      gap: 36px;
   }
 
   /* SECTION 1 */
@@ -99,7 +102,7 @@
     
     color: #FFFFFF;
     padding-left: 40px;
-    padding-top: 60px;
+    padding-top: 226px;
     
   }
 
@@ -121,4 +124,187 @@
     
     color: #CDCDCD;
     padding-left: 40px;
+    padding-top: 41px;
   }
+
+  .img-puppi {
+    padding-left: 43px;
+    padding-top: 60px;
+  }
+
+  .make-a-friend-btn {
+    padding-left: 40px;
+    padding-top: 52px;
+  }
+  /* ////////////SECTION-2/////////////////// */
+
+  .section-2 {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .about-the-shelter {
+    display: flex;
+    flex-direction: column;
+    padding-top: 96px;
+    padding-right: 153px;
+  }
+
+  .cozy-house-h3 {
+
+width: 370px;
+/* height: 90px;
+left: 0px;
+top: 0px; */
+
+/* h3 */
+
+font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 130%;
+/* or 45px */
+
+/* display: flex;
+align-items: center; */
+letter-spacing: 0.06em;
+
+
+
+color: #545454;
+  }
+
+  .cozy-hous {
+width: 430px;
+/* height: 96px;
+left: 0px;
+top: 115px; */
+
+font-family: 'Arial';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 160%;
+color: #4C4C4C;
+padding-top: 24px;
+  }
+
+.img-puppi-cat {
+  padding-left: 153px;
+  padding-top: 82px;
+}
+
+/* /////////////SECTION-3////////////////// */
+
+h4 {
+/* width: 83px;
+height: 23px;
+left: 94px;
+top: 300px; */
+
+/* pets-card-title */
+
+font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+/* identical to box height */
+
+/* display: flex;
+align-items: center; */
+text-align: center;
+letter-spacing: 0.06em;
+
+/* color-dark-l */
+
+color: #545454;
+}
+
+.button-h5 {
+
+/* left: 24.06%;
+right: 24.06%;
+top: 28.85%;
+bottom: 28.85%; */
+
+font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 130%;
+/* identical to box height, or 22px */
+
+letter-spacing: 0.06em;
+
+/* color-dark-3xl */
+
+color: #292929;
+
+
+/* Inside auto layout */
+/* 
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 10px 0px; */
+}
+
+.lern-more {
+  padding-top: 10px;
+}
+
+.section-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 57px;
+}
+
+/* .flex-section-3 {
+  display: flex;
+  align-items: center;
+} */
+
+.text-center-h3 {
+  width: 400px;
+  height: 90px;
+left: 400px;
+top: 0px;
+
+/* h3 */
+
+font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 130%;
+/* or 45px */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.06em;
+
+/* color-dark-l */
+
+color: #545454;
+  margin: auto;
+  padding-top: 182px;
+}
+
+.flex-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+
+.get-to-know {
+  text-align:center;
+  
+  padding-top: 115px;
+}
+
+.btn-section-3 {
+}
