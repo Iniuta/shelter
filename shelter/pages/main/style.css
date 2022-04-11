@@ -2,6 +2,10 @@
     --container-width: 1280px;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   header {
       background-image: url(../../assets/images/start-screen-background.jpg);
   }
@@ -44,7 +48,7 @@
     padding-left: 4px;
   }
 
-  li {
+  .li-nav {
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -53,6 +57,9 @@
     color: #CDCDCD;
     margin: 10px 0px;
     list-style-type: none;
+    text-decoration: none;
+    transition: all;
+    scroll-behavior: smooth;
   }
 
   ul {
@@ -103,8 +110,17 @@
 
   .make-a-friend-btn {
     padding-left: 40px;
-    padding-top: 52px;
+    padding-top: 40px;
   }
+
+  .btn-make-a-friend {
+    width: 207px;
+height: 52px;
+background: #F1CDB3;
+border-radius: 100px;
+border: none;
+  }
+
   /* ////////////SECTION-2/////////////////// */
 
   .section-2 {
@@ -168,10 +184,16 @@ font-size: 17px;
 line-height: 130%;
 letter-spacing: 0.06em;
 color: #292929;
+text-decoration: none;
 }
 
 .lern-more {
-  padding-top: 10px;
+  border: 2px solid #F1CDB3;
+  box-sizing: border-box;
+  border-radius: 100px;
+  width: 187px;
+  height: 52px;
+  margin: auto;
 }
 
 .section-3 {
@@ -207,8 +229,28 @@ color: #545454;
 
 .get-to-know {
   text-align:center;
-  
-  padding-top: 115px;
+  padding-top: 86px;
+}
+
+.btn-section-3 {
+  width: 261px;
+height: 52px;
+background: #F1CDB3;
+border-radius: 100px;
+border: none;
+}
+
+.btn-aside {
+  width: 52px;
+height: 52px;
+border: 2px solid #F1CDB3;
+background-color: #FFFFFF;
+border-radius: 100px;
+}
+
+.flex-btn-aside {
+  display: flex;
+  align-items: center;
 }
 
 
@@ -228,7 +270,7 @@ text-align: center;
 letter-spacing: 0.055em;
     color: #545454;
     margin: auto;
-    padding-top: 193px;
+    padding-top: 182px;
 }
 
 .flex-section-4 {
@@ -268,9 +310,9 @@ padding-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 176px;
+  padding-top: 181px;
     gap: 32px;
-    padding-bottom: 97px;
+    padding-bottom: 93px;
 }
 
 .text-h3-donation {
@@ -338,6 +380,7 @@ font-size: 20px;
 line-height: 115%;
 letter-spacing: 0.06em;
 color: #545454;
+text-decoration: none;
 }
 
 /* /////////SECTION-6//////////////////// */
@@ -423,7 +466,7 @@ footer {
   padding-right: 12px;
 }
 
-a {
+.link {
   text-decoration: none;
   /* width: 191px;
 height: 23px; */
