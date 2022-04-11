@@ -14,7 +14,7 @@
     <header>
         <div class="header-flex">
 
-            <div class="flex-logo">
+            <div class="flex-logo"  onclick="location.href='../main/index.html';">
 
 
                 <h1>
@@ -33,20 +33,20 @@
 
 
                 <ul>
-                    <li>
+                    <li onclick="location.href='../main/index.html';">
                         About the shelter
                     </li>
 
-                    <li>
+                    <li class="active-li">
                         Our pets
                     </li>
 
-                    <li>
+                    <li onclick="location.href='../main/index.html#part3';">
                         Help the shelter
                     </li>
 
-                    <li>
-                        Contacts
+                    <li >
+                        <a href="#part4" class="li" >Contacts</a>
                     </li>
                 </ul>
 
@@ -247,35 +247,36 @@
 
 
 
+  
     <footer>
 
         <div class="flex-footer">
 
             <div class="footer-column-1">
 
-                <h5 class="h5-footer">
+                <h5 id="part4" class="h5-footer">
                     For questions
                     and suggestions
                 </h5>
 
+
                 <div class="bckg-imgs">
+                    <a href="mailto:email@shelter.com" class="link">
+                        <img src="../../assets/icons/icon-email.svg" alt="email" width="40px" height="32px">
 
-                    <img src="../../assets/icons/icon-email.svg" alt="email" width="40px" height="32px">
-
-                    <p class="footer-text">
-                        <a href="email@shelter.com">email@shelter.com</a>
-                    </p>
-
+                        <span class="footer-text"> email@shelter.com
+                        </span>
+                    </a>
                 </div>
 
                 <div class="bckg-imgs">
+                    <a href="tel:+136745677554" class="link">
+                        <img src="../../assets/icons/icon-phone.svg" alt="phone" width="40px" height="32px">
 
-                    <img src="../../assets/icons/icon-phone.svg" alt="phone" width="40px" height="32px">
-
-                    <p class="footer-text">
-                        <a href="tel:+136745677554">+13 674 567 75 54</a>
-                    </p>
-
+                        <span class="footer-text">
+                            +13 674 567 75 54
+                        </span>
+                    </a>
                 </div>
 
             </div>
@@ -291,19 +292,24 @@
 
                     <img src="../../assets/icons/icon-marker.svg" alt="market" width="22px" height="32px">
 
-                    <p class="footer-text central-street">
-                        1 Central Street, Boston
-                        (entrance from the store)
+                    <p>
+                        <a href="http://www.google.com/maps/place/49.46800006494457,17.11514008755796" class="footer-text">
+                            1 Central Street, Boston
+                            (entrance from the store)
+                        </a>
+                 
                     </p>
 
                 </div>
 
-                <div class="bckg-imgs-1 bckg-imgs-2">
+                <div class="bckg-imgs-2">
 
                     <img src="../../assets/icons/icon-marker.svg" alt="market" width="22px" height="32px">
 
-                    <p class="footer-text south-park">
-                        18 South Park, London
+                    <p>
+                        <a href="http://www.google.com/maps/place/51.47805914358004, -0.1081335006367143" class="footer-text">
+                            18 South Park, London
+                        </a>
                     </p>
 
                 </div>
