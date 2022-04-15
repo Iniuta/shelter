@@ -1,0 +1,170 @@
+:root {
+    --container-width: 1280px;
+  }
+  
+  @media (max-width: 768px) {
+    :root {
+      --container-width: 768px;
+    }
+  }
+  
+  @font-face {
+    font-family: "Arial";
+    src: url("../../assets/fonts/fonts/fonts/arial/arial-regular.ttf");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("../../assets/fonts/fonts/fonts/georgia/georgia-regular.ttf");
+    font-weight: 400;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+body {
+    width: var(--container-width);
+    margin: auto;
+  }
+
+  /* our-pets cards //////////////////////*/
+
+  .text-center-h3 {
+    width: 400px;
+    height: 90px;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+  
+    text-align: center;
+    letter-spacing: 0.06em;
+  
+    color: #545454;
+    margin: auto;
+    padding-top: 81px;
+  }
+
+  h4 {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+
+  .button-h5 {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    text-decoration: none;
+  }
+
+  .lern-more {
+    border: 2px solid #f1cdb3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 187px;
+    height: 52px;
+    margin: auto;
+    background-color: #fafafa;
+  }
+
+  .flex-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+    padding-bottom: 30px;
+    background-color: #fafafa;
+  }
+
+  @media (max-width: 768px) {
+    .woody {
+        display: none;
+    }
+  }
+  /* FOOTER////////////////////////////////////////// */
+
+footer {
+    background-image: url(../../assets/images/footer-background.png);
+  }
+    
+
+.flex-footer {
+    display: flex;
+    justify-content: space-around;
+    gap: 47px;
+  }
+
+  .h5-footer {
+    width: 281px;
+    height: 90px;
+  
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+  
+    letter-spacing: 0.06em;
+  
+    color: #ffffff;
+  }
+
+  .footer-text {
+    text-decoration: none;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+  
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+  }
+
+  .footer-column-1 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 56px;
+    padding-left: 40px;
+  }
+  
+  .footer-column-2 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 56px;
+    padding-left: 111px;
+  }
+  
+  .img-footer-puppi {
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .bckg-imgs {
+    display: flex;
+    gap: 20px;
+    padding-top: 41px;
+    align-items: center;
+  }
+  
+  .bckg-imgs-1 {
+    display: flex;
+    gap: 20px;
+    padding-top: 33px;
+    align-items: center;
+  }
+  
