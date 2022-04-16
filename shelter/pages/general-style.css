@@ -127,6 +127,13 @@ footer {
     }
   }
 
+  @media (min-width: 769px) {
+    .flex-footer-768 {
+  display: none;
+    }
+  }
+  
+
   .h5-footer {
     width: 281px;
     height: 90px;
@@ -189,11 +196,17 @@ padding: 0%;
   }
 
   @media (max-width: 768px) {
-    .img-footer-puppi {
+    .img-footer-puppi-768 {
       width: 300px;
       height: 310px;
       padding-top: 62px;
       padding-left: 235px;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .img-footer-puppi-768 {
+      display: none;
     }
   }
 

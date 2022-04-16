@@ -8,6 +8,13 @@
   padding-bottom: 30px;
 }
 
+@media (max-width: 768px) {
+  .header-flex {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
 h1 {
   width: 190px;
   height: 35px;
@@ -66,12 +73,54 @@ main {
   padding-bottom: 98px;
 }
 
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 74px;
+  }
+}
+
+@media (max-width: 768px) {
+  .flex-section-3 {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .flex-section-3-768 {
+    display: none;
+  }
+}
+
+
 
 .section-3-row-1 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding-top: 58px;
+}
+
+@media (max-width: 769px) {
+  .section-3-row-1 {
+    justify-content: center;
+    gap: 40px;
+    padding-top: 30px;
+  }
+}
+
+.section-3-row-1-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 58px;
+}
+
+@media (max-width: 769px) {
+  .section-3-row-1-2 {
+    justify-content: center;
+    gap: 40px;
+    padding-top: 26px;
+  }
 }
 
 .section-3-row-2 {
@@ -82,12 +131,24 @@ main {
   padding-top: 29px;
 }
 
+@media (max-width: 769px) {
+  .section-3-row-2 {
+    padding-top: 28px;
+  }
+}
+
 
 .flex-btn-our-pets {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding-top: 60px;
+}
+
+@media (max-width: 769px) {
+  .flex-btn-our-pets {
+    padding-top: 40px;
+  }
 }
 
 
