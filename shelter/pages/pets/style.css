@@ -66,6 +66,43 @@ ul {
   gap: 39px;
 }
 
+
+@media (max-width: 768px) {
+  .nav-1280 {
+    display: none;
+  }
+}
+
+ @media (min-width: 321px) {
+  .nav-1280 {
+    display: none;
+  }
+}
+
+@media (min-width: 321px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .ul-320 {
+    display: none;
+  }
+}
+
+.hamburger .line {
+  width: 30px;
+    height: 2px;
+    display: block;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  background-color: #000000;
+}
+
+
 /* //////////////////////MAIN///////////////// */
 
 main {
