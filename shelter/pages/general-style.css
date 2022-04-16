@@ -97,12 +97,34 @@ body {
 footer {
     background-image: url(../../assets/images/footer-background.png);
   }
+
+  @media (max-width: 768px) {
+    footer {
+      background-image: url(../assets/images/main-768/footer-background.jpg);
+      background-image: url(../assets/images/main-768/footer-gradient-background.png);
+    }
+  }
     
 
 .flex-footer {
     display: flex;
     justify-content: space-around;
     gap: 47px;
+  }
+
+  @media (max-width: 768px) {
+    .flex-footer {
+        display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .flex-footer-768 {
+      display: flex;
+      gap: 61px;
+      padding-left: 64px;
+      padding-top: 30px;
+    }
   }
 
   .h5-footer {
@@ -139,6 +161,12 @@ footer {
     padding-top: 56px;
     padding-left: 40px;
   }
+
+  @media (max-width: 768px) {
+    .footer-column-1 {
+padding: 0%;
+    }
+  }
   
   .footer-column-2 {
     display: flex;
@@ -147,11 +175,26 @@ footer {
     padding-top: 56px;
     padding-left: 111px;
   }
+
+  @media (max-width: 768px) {
+    .footer-column-2 {
+padding: 0%;
+    }
+  }
   
   .img-footer-puppi {
     padding-top: 40px;
     padding-right: 40px;
     padding-left: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .img-footer-puppi {
+      width: 300px;
+      height: 310px;
+      padding-top: 62px;
+      padding-left: 235px;
+    }
   }
 
   .bckg-imgs {

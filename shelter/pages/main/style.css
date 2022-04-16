@@ -112,15 +112,15 @@ ul {
 
 @media (max-width: 768px) {
   .section-1 {
+display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-1-768 {
     background-image: url(../../assets/images/main-768/start-screen-background.jpg);
     background-image: url(../../assets/images/main-768/start-screen-gradient-background.png);
   }
-  /* .img-puppi{
-    width: 569px;
-    height: 593px;
-    padding-top: 484px;
-    padding-right: 30px;
-  } */
 }
 
 h2 {
@@ -172,8 +172,8 @@ h2 {
   .img-puppi{
     width: 569px;
     height: 593px;
-    padding-top: 484px;
-    padding-right: 30px;
+    padding-top: 100px;
+    padding-left: 169px;
   }
 }
 
