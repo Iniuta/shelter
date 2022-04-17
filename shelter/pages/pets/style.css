@@ -1,11 +1,22 @@
 
 .header-flex {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 30px; */
+
+  display: flex;
+    justify-content: space-around;
+    gap: 477px;
+    /* padding-left: 40px; */
+    /* padding-right: 40px; */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: fixed;
+    background-color: white;
+    width: 1280px;
 }
 
 @media (max-width: 768px) {
@@ -152,7 +163,7 @@ main {
 
   color: #545454;
   margin: auto;
-  padding-top: 81px;
+  padding-top: 201px;
 }
 
 @media (max-width: 768px) {
@@ -229,7 +240,7 @@ main {
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .section-3-row-1 {
     justify-content: center;
     gap: 40px;
@@ -274,7 +285,7 @@ main {
   padding-top: 60px;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .flex-btn-our-pets {
     padding-top: 40px;
   }
