@@ -12,6 +12,10 @@
   .header-flex {
     padding-left: 30px;
     padding-right: 30px;
+    background-color: white;
+    position: fixed;
+    justify-content: flex-start;
+    gap: 71px;
   }
 }
 
@@ -116,18 +120,70 @@ main {
   }
 }
 
+.text-center-h3 {
+  width: 400px;
+  height: 90px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  color: #545454;
+  margin: auto;
+  padding-top: 81px;
+}
+
 @media (max-width: 768px) {
+  .text-center-h3 {
+    padding-top: 202px;
+  }
+}
+
+@media (max-width: 320px) {
+  .text-center-h3 {
+    font-size: 25px;
+    padding-top: 161px;
+  }
+}
+
+
+/* OUR FRIENDS SCREEN */
+
+@media (min-width: 769px) {
+  .flex-section-3-320 {
+    display: none;
+  }
+
+    .flex-section-3-768 {
+    display: none;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .flex-section-3-320 {
+    display: none;
+  }
+
   .flex-section-3 {
     display: none;
   }
 }
 
-@media (min-width: 769px) {
+@media (max-width: 320px) {
   .flex-section-3-768 {
+    display: none;
+  }
+
+  .flex-section-3 {
     display: none;
   }
 }
 
+/* //OUR FRIENDS SCREEN// */
 
 
 .section-3-row-1 {
@@ -135,6 +191,15 @@ main {
   flex-direction: row;
   justify-content: space-evenly;
   padding-top: 58px;
+}
+
+@media (max-width: 320px) {
+  .section-3-row-1-320 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 30px;
+  }
 }
 
 @media (max-width: 769px) {

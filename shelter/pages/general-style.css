@@ -30,22 +30,7 @@ body {
 
   /* our-pets cards //////////////////////*/
 
-  .text-center-h3 {
-    width: 400px;
-    height: 90px;
-    font-family: "Georgia";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 130%;
-  
-    text-align: center;
-    letter-spacing: 0.06em;
-  
-    color: #545454;
-    margin: auto;
-    padding-top: 81px;
-  }
+
 
   h4 {
     font-family: "Georgia";
@@ -85,6 +70,12 @@ body {
     gap: 31px;
     padding-bottom: 30px;
     background-color: #fafafa;
+  }
+
+  @media (max-width: 320px) {
+    .flex-cards {
+      width: 270px;
+    }
   }
 
   @media (max-width: 768px) {
