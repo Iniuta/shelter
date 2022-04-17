@@ -7,6 +7,12 @@
       --container-width: 768px;
     }
   }
+
+  @media (max-width: 320px) {
+    :root {
+      --container-width: 320px;
+    }
+  }
   
   @font-face {
     font-family: "Arial";
@@ -75,6 +81,7 @@ body {
   @media (max-width: 320px) {
     .flex-cards {
       width: 270px;
+      padding-bottom: 58px;
     }
   }
 
@@ -108,7 +115,13 @@ footer {
         display: none;
     }
   }
-
+  
+  @media (min-width: 769px) {
+    .flex-footer-768 {
+  display: none;
+    }
+  }
+  
   @media (max-width: 768px) {
     .flex-footer-768 {
       display: flex;
@@ -118,9 +131,14 @@ footer {
     }
   }
 
-  @media (min-width: 769px) {
+  @media (max-width: 320px) {
     .flex-footer-768 {
-  display: none;
+      display: flex;
+      gap: 44px;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 31px;
+      padding-left: 0px;
     }
   }
   
@@ -139,6 +157,16 @@ footer {
   
     color: #ffffff;
   }
+
+  @media (max-width: 320px) {
+    .h5-footer {
+      font-size: 25px;
+      width: 270px;
+    height: 64px;
+    text-align: center;
+    }
+  }
+  
 
   .footer-text {
     text-decoration: none;
@@ -165,6 +193,17 @@ footer {
 padding: 0%;
     }
   }
+
+  @media (max-width: 320px) {
+    .footer-column-1 {
+    padding: 0%;
+    width: 278px;
+    height: 208px;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    }
+  }
   
   .footer-column-2 {
     display: flex;
@@ -179,6 +218,16 @@ padding: 0%;
 padding: 0%;
     }
   }
+
+  @media (max-width: 320px) {
+    .footer-column-2 {
+      padding: 0%;
+      width: 300px;
+      height: 222px;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
   
   .img-footer-puppi {
     padding-top: 40px;
@@ -190,8 +239,17 @@ padding: 0%;
     .img-footer-puppi-768 {
       width: 300px;
       height: 310px;
-      padding-top: 62px;
+      padding-top: 50px;
       padding-left: 235px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .img-footer-puppi-768 {
+      width: 260px;
+      height: 269px;
+      padding-top: 36px;
+      padding-left: 30px;
     }
   }
 
@@ -208,10 +266,27 @@ padding: 0%;
     align-items: center;
   }
   
+  @media (max-width: 320px) {
+    .bckg-imgs {
+      width: 251px;
+      height: 32px;
+      align-items: center;
+    }
+  }
+
   .bckg-imgs-1 {
     display: flex;
     gap: 20px;
     padding-top: 33px;
     align-items: center;
+  }
+
+  @media (min-width: 320px) {
+    .bckg-imgs-1 {
+      gap: 20px;
+      width: 300px;
+      height: 46px;
+      align-items: center;
+    }
   }
   
