@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <div class="menu header__menu-padding">
             <div class="logo" onclick="location.href='#';"> <!-- active -->
                 <h1 class="logo__title">
@@ -37,7 +37,7 @@
                         Help the shelter
                     </li>
 
-                    <li class="li-hover">
+                    <li class="navigation__list-item">
                         <a href="#part4" class="navigation__list-item">Contacts</a>
                     </li>
                 </ul>
@@ -51,43 +51,40 @@
     </header>
     <main>
         <section class="section-1">
-            <div class="section-1-items section-1__items-padding">
-                <div class="section-1-discribe section-1-items__discribe-padding">
+            <div class="items section-1__items-padding">
+                <div class="main-discribe items__main-discribe-padding">
                     <h2 class="section-titles">
                         Not only people need a house
                     </h2>
-                    <p class="section-discribe section-discribe__not-only">
+                    <p class="main-discribe">
                         We offer to give a chance to a little and nice puppy with an extremely
                         wide and open heart. He or she will love you more than anybody else
                         in the world, you will see!
                     </p>
-                    <a href="#part2" class="section-1-discribe__btn-link section-1-discribe__btn-padding">
+                    <a href="#part2" class="main-discribe__btn-link main-discribe__btn-padding">
                         <button class="main-button ">
                             Make a friend
                         </button>
                     </a>
                 </div>
-                <div class="section-1-items__img-padding">
-                    <img class="img-puppi" src="../../assets/images/start-screen-puppy.png" alt="puppi">
-                </div>
+                <img class="img-puppi items__img-padding" src="../../assets/images/start-screen-puppy.png" alt="puppi">
             </div>
         </section>
         <section class="section-2">
-            <div class="section-about section-2__about-padding">
-                <div class="section-about__img-padding">
-                    <img class="img-puppi-cat" src="../../assets/images/about-pets.png" alt="animals">
-                </div>
-                <div class="discribe-about section-about__discribe-about-padding">
+            <div class="about section-2__about-padding">
+                <img class="img-puppi-cat about__img-padding" src="../../assets/images/about-pets.png"
+                    alt="animals">
+                <div class="discribe-about about__discribe-about-padding">
                     <h2 class="section-titles">
                         About the shelter “Cozy House”
                     </h2>
-                    <p class="section-discribe section-discribe__cozy-hous">
+                    <p class="discribe-about__text-discribe">
                         Currently we have 121 dogs and 342 cats on our hands and
                         statistics show that only 20% of them will find a family. The
                         others will continue to live with us and will be waiting for a lucky
                         chance to become dearly loved.
                     </p>
-                    <p class="section-discribe section-discribe__cozy-hous">
+                    <p class="discribe-about__text-discribe">
                         We feed our wards with the best food and make sure that they
                         do not get sick, feel comfortable (including psychologically) and
                         well. We are supported by 87 volunteers and 28 employees of
@@ -248,7 +245,7 @@
     <footer class="footer">
         <div class="items footer__items-padding">
             <div class="items__column">
-                <h2 id="part4" class="section-title">
+                <h2 id="part4" class="section-titles">
                     For questions
                     and suggestions
                 </h2>
@@ -269,33 +266,26 @@
                 </div>
             </div>
             <div class="items__column">
-                <h2 class="section-title">
+                <h2 class="section-titles">
                     We are waiting
                     for your visit
                 </h2>
-                <div class="bckg-imgs-1">
-                    <a href="http://www.google.com/maps/place/49.46800006494457,17.11514008755796" class="footer-text">
+                <div class="items-links">
+                    <a href="http://www.google.com/maps/place/49.46800006494457,17.11514008755796">
                         <img src="../../assets/icons/icon-marker.svg" alt="market" width="22px" height="32px">
-                    </a>
-                    <p>
-                        <a href="http://www.google.com/maps/place/49.46800006494457,17.11514008755796"
-                            class="footer-text">
+                        <p class="item-links_text">
                             1 Central Street, Boston
                             (entrance from the store)
-                        </a>
-                    </p>
-                </div>
-                <div class="bckg-imgs-1">
-                    <a href="http://www.google.com/maps/place/51.47805914358004, -0.1081335006367143"
-                        class="footer-text">
-                        <img src="../../assets/icons/icon-marker.svg" alt="market" width="22px" height="32px">
+                        </p>
                     </a>
-                    <p>
-                        <a href="http://www.google.com/maps/place/51.47805914358004, -0.1081335006367143"
-                            class="footer-text">
+                </div>
+                <div class="items-links">
+                    <a href="http://www.google.com/maps/place/51.47805914358004, -0.1081335006367143">
+                        <img src="../../assets/icons/icon-marker.svg" alt="market" width="22px" height="32px">
+                        <p class="item-links_text">
                             18 South Park, London
-                        </a>
-                    </p>
+                        </p>
+                    </a>
                 </div>
             </div>
             <img class="img-footer-puppi" src="../../assets/images/footer-puppy.png" alt="puppi" width="300px"
