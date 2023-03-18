@@ -173,13 +173,14 @@ body {
   text-align: center;
 }
 .main-button_lern-more {
-  width: 187px;
+  width: 100%;
   align-items: center;
   border: 2px solid #F1CDB3;
   background: transparent;
 }
 .main-button_get-rest {
-  width: 261px;
+  margin: auto;
+  width: 21.9%;
   align-items: center;
 }
 
@@ -237,23 +238,46 @@ body {
 .friends__friends-items-padding {
   padding: 6rem 0;
 }
+.friends__btn-aside-padding {
+  margin-top: 19rem;
+}
+
 .frends-items {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+.btn-aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  left: 1200px;
+  top: 244px;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+}
+
 .cards-items {
+  flex-wrap: wrap;
   width: 82.5%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 .cards-items__item-element {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  width: 27.3%;
+}
+.cards-items__animals {
+  width: 100%;
+}
+.cards-items__background {
+  width: 100%;
+  padding-top: 3rem;
+  background: #FAFAFA;
 }
 .cards-items__pets-name {
   font-family: "Georgia";
@@ -266,7 +290,7 @@ body {
   color: #545454;
 }
 .cards-items__btn-padding {
-  margin: 3rem 0;
+  padding: 2.9rem 4rem;
 }
 
 .section-4 {

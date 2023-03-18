@@ -220,14 +220,15 @@ body {
   text-align: center;
 
   &_lern-more{
-    width: 187px;
+    width: 100%;
     align-items: center;
     border: 2px solid #F1CDB3;
     background: transparent;
   }
 
   &_get-rest {
-    width: 261px;
+    margin: auto;
+    width: 21.9%;
     align-items: center;
   }
 }
@@ -292,24 +293,46 @@ body {
     padding: 6rem 0;
   }
 
-  // .friends__btn-btn-section-3-padding
-
-  &__btn-btn-section-3-padding {
+  &__btn-aside-padding {
+    margin-top: 19rem;
   }
 }
 .frends-items {
+  width: 100%;
   @include flex-container();
+
 }
 .btn-aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  left: 1200px;
+  top: 244px;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
 }
 .cards-items {
+  flex-wrap: wrap;
   width: 82.5%;
   @include flex-container();
   // .cards-items__item-element
 
   &__item-element {
-    @include flex-container(column, space-around);
-    align-items: center;
+    width: 27.3%;
+  }
+
+  &__animals {
+    width: 100%;
+  }
+
+  // .cards-items__background
+
+  &__background {
+    width: 100%;
+    padding-top: 3rem;
+    background: #FAFAFA;
   }
 
   // .cards-items__pets-name
@@ -328,7 +351,7 @@ body {
   // .cards-items__btn-padding
 
   &__btn-padding {
-    margin: 3rem 0;
+    padding: 2.9rem 4rem;
   }
 }
 .lern-more {
