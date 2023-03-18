@@ -153,6 +153,11 @@ body {
   width: 100%;
   text-align: center;
 }
+.section-titles_help {
+  width: 31%;
+  margin: auto;
+  text-align: center;
+}
 
 .main-button {
   display: flex;
@@ -175,7 +180,7 @@ body {
 .main-button_lern-more {
   width: 100%;
   align-items: center;
-  border: 2px solid #F1CDB3;
+  border: 2px solid #f1cdb3;
   background: transparent;
 }
 .main-button_get-rest {
@@ -257,7 +262,7 @@ body {
   height: 52px;
   left: 1200px;
   top: 244px;
-  border: 2px solid #F1CDB3;
+  border: 2px solid #f1cdb3;
   border-radius: 100px;
 }
 
@@ -277,7 +282,7 @@ body {
 .cards-items__background {
   width: 100%;
   padding-top: 3rem;
-  background: #FAFAFA;
+  background: #fafafa;
 }
 .cards-items__pets-name {
   font-family: "Georgia";
@@ -298,8 +303,64 @@ body {
 }
 
 .help {
+  width: 100%;
   margin: 8rem 0 10rem 0;
 }
+.help__help-items-padding {
+  margin: 6rem 8.2rem;
+}
+
+.help-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 5.5rem;
+  column-gap: 12rem;
+}
+.help-items__icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.help-items__icons_food {
+  width: 83px;
+}
+.help-items__icons_transport {
+  width: 150px;
+}
+.help-items__icons_toys {
+  width: 60px;
+}
+.help-items__icons_bowls {
+  width: 154px;
+}
+.help-items__icons_shampoos {
+  width: 101px;
+}
+.help-items__icons_vitamins {
+  width: 89px;
+}
+.help-items__icons_medicines {
+  width: 101px;
+}
+.help-items__icons_collars {
+  width: 166px;
+}
+.help-items__icons_sleeping {
+  width: 144px;
+}
+.help-items__discribe {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 115%;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #545454;
+  padding-top: 3rem;
+}
+
 .section-5 {
   background: #f6f6f6;
 }

@@ -191,15 +191,24 @@ body {
   color: #ffffff;
   width: 70%;
 
-  // .section-titles_not-only
+  // .section-titles_space-letters
 
   &_space-letters {
     font-size: 3.5rem;
     letter-spacing: 0.06em;
     color: #545454;
   }
+
+  // .section-titles_our-friends
+
   &_our-friends {
     width: 100%;
+    text-align: center;
+  }
+  // .section-titles_help
+  &_help {
+    width: 31%;
+    margin: auto;
     text-align: center;
   }
 }
@@ -219,10 +228,10 @@ body {
   color: #292929;
   text-align: center;
 
-  &_lern-more{
+  &_lern-more {
     width: 100%;
     align-items: center;
-    border: 2px solid #F1CDB3;
+    border: 2px solid #f1cdb3;
     background: transparent;
   }
 
@@ -300,7 +309,6 @@ body {
 .frends-items {
   width: 100%;
   @include flex-container();
-
 }
 .btn-aside {
   display: flex;
@@ -310,7 +318,7 @@ body {
   height: 52px;
   left: 1200px;
   top: 244px;
-  border: 2px solid #F1CDB3;
+  border: 2px solid #f1cdb3;
   border-radius: 100px;
 }
 .cards-items {
@@ -332,7 +340,7 @@ body {
   &__background {
     width: 100%;
     padding-top: 3rem;
-    background: #FAFAFA;
+    background: #fafafa;
   }
 
   // .cards-items__pets-name
@@ -362,21 +370,77 @@ body {
   background: $color-lite-sections;
 }
 .help {
-margin: $sections-paddings;
+  width: 100%;
+
+  margin: $sections-paddings;
   // .help__help-items-padding
 
   &__help-items-padding {
+    margin: 6rem 8.2rem;
   }
 }
+
 .help-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 5.5rem;
+  column-gap: 12rem;
+
   // .help-items__icons
 
   &__icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_food {
+      width: 83px;
+    }
+    &_transport {
+      width: 150px;
+    }
+    &_toys {
+      width: 60px;
+    }
+    &_bowls {
+      width: 154px;
+    }
+    &_shampoos {
+      width: 101px;
+    }
+    &_vitamins {
+      width: 89px;
+    }
+    &_medicines {
+      width: 101px;
+    }
+    &_collars {
+      width: 166px;
+    }
+    &_sleeping {
+      width: 144px;
+    }
+  }
+
+  // .help-items__icon
+
+  &__icon {
+ 
   }
 
   // .help-items__discribe
 
   &__discribe {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 115%;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+    padding-top: 3rem;
   }
 }
 .section-5 {
