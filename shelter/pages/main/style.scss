@@ -1,5 +1,11 @@
-$color-lite-sections: #ffffff;
+$color-white: #ffffff;
 $color-dark-sections: #f6f6f6;
+$color-dark-grey: #545454;
+$color-pink-btn: #f1cdb3;
+$color-light-grey: #cdcdcd;
+$color-main-btn-text: #292929;
+$color-cards-background: #fafafa;
+$color-text-about: #4c4c4c;
 $sections-paddings: 8rem 0 10rem 0;
 $width-container: 1200px;
 $wrapper-padding: 0 4rem;
@@ -8,6 +14,40 @@ $wrapper-padding: 0 4rem;
   display: flex;
   flex-direction: $flex-direction;
   justify-content: $justify-content;
+}
+
+@mixin font-Arial-letter-spacing(
+  $font-size: 13px,
+  $line-height: 160%,
+  $letter-spacing: 0.1em
+) {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size;
+  line-height: $font-size;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin font-Arial($font-size: 13px, $line-height: 160%) {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin font-Georgia(
+  $font-size: 32px,
+  $line-height: 110%,
+  $letter-spacing: 0.06em
+) {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
 }
 
 @font-face {
@@ -74,25 +114,15 @@ body {
   // .logo__title
 
   &__title {
-    font-family: "Georgia";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 110%;
-    letter-spacing: 0.06em;
-    color: #f1cdb3;
+    @include font-Georgia();
+    color: $color-pink-btn;
   }
 
   // .logo__discribe
 
   &__discribe {
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 15px;
-    letter-spacing: 0.1em;
-    color: #ffffff;
+    @include font-Arial-letter-spacing(1.3rem, 1.5rem);
+    color: $color-white;
   }
 }
 .navigation {
@@ -108,37 +138,27 @@ body {
   // .navigation__list-item
 
   &__list-item {
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 160%;
-    color: #cdcdcd;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    @include font-Arial(1.5rem);
+    color: $color-light-grey;
   }
 }
 .list-item {
   // .list-item_active
 
   &_active {
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 160%;
-    color: #fafafa;
-    text-decoration: underline 3px #f1cdb3;
+    @include font-Arial(1.5rem);
+    color: $color-cards-background;
+    text-decoration: underline 3px $color-pink-btn;
   }
 }
 .section-1 {
-  // .section-1__items-padding
   background-image: url(../../assets/images/start-screen-gradient-background.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center -180px;
-  width: 100%;
+
+  // .section-1__items-padding
+
   &__items-padding {
   }
 }
@@ -167,12 +187,8 @@ body {
   // .main-discribe__text
 
   &__text {
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 160%;
-    color: #cdcdcd;
+    @include font-Arial(1.5rem);
+    color: $color-light-grey;
     padding-top: 4.2rem;
   }
 
@@ -183,12 +199,8 @@ body {
   }
 }
 .section-titles {
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 4.4rem;
-  line-height: 130%;
-  color: #ffffff;
+  @include font-Georgia(4.4rem, 130%, 0);
+  color: $color-white;
   width: 70%;
 
   // .section-titles_space-letters
@@ -196,7 +208,7 @@ body {
   &_space-letters {
     font-size: 3.5rem;
     letter-spacing: 0.06em;
-    color: #545454;
+    color: $color-dark-grey;
   }
 
   // .section-titles_our-friends
@@ -216,22 +228,17 @@ body {
   @include flex-container(column, center);
   width: 207px;
   height: 52px;
-  background: #f1cdb3;
+  background: $color-pink-btn;
   border-radius: 100px;
   border: none;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.7rem;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  color: #292929;
+  @include font-Georgia(1.7rem, 130%);
+  color: $color-main-btn-text;
   text-align: center;
 
   &_lern-more {
     width: 100%;
     align-items: center;
-    border: 2px solid #f1cdb3;
+    border: 2px solid $color-pink-btn;
     background: transparent;
   }
 
@@ -246,7 +253,7 @@ body {
   width: 58.2%;
 }
 .section-2 {
-  background: $color-lite-sections;
+  background: $color-white;
   // .section-2__about-padding
 
   &__about-padding {
@@ -278,12 +285,8 @@ body {
 
   &__text-discribe {
     width: 100%;
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 160%;
-    color: #4c4c4c;
+    @include font-Arial(1.5rem);
+    color: $color-text-about;
   }
 }
 .section-3 {
@@ -306,7 +309,7 @@ body {
     margin-top: 19rem;
   }
 }
-.frends-items {
+.friends-items {
   width: 100%;
   @include flex-container();
 }
@@ -316,15 +319,14 @@ body {
   align-items: center;
   width: 52px;
   height: 52px;
-  left: 1200px;
-  top: 244px;
-  border: 2px solid #f1cdb3;
+  border: 2px solid $color-pink-btn;
   border-radius: 100px;
 }
 .cards-items {
-  flex-wrap: wrap;
   width: 82.5%;
   @include flex-container();
+  flex-wrap: wrap;
+
   // .cards-items__item-element
 
   &__item-element {
@@ -340,20 +342,16 @@ body {
   &__background {
     width: 100%;
     padding-top: 3rem;
-    background: #fafafa;
+    background: $color-cards-background;
   }
 
   // .cards-items__pets-name
 
   &__pets-name {
+    @include font-Georgia(2rem, 2.3rem);
     font-family: "Georgia";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2rem;
-    line-height: 23px;
     text-align: center;
-    letter-spacing: 0.06em;
-    color: #545454;
+    color: $color-dark-grey;
   }
 
   // .cards-items__btn-padding
@@ -367,7 +365,7 @@ body {
 .btn-section-3 {
 }
 .section-4 {
-  background: $color-lite-sections;
+  background: $color-white;
 }
 .help {
   width: 100%;
@@ -426,20 +424,14 @@ body {
   // .help-items__icon
 
   &__icon {
- 
   }
 
   // .help-items__discribe
 
   &__discribe {
-    font-family: "Georgia";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2rem;
-    line-height: 115%;
+    @include font-Georgia(2rem, 115%);
     text-align: center;
-    letter-spacing: 0.06em;
-    color: #545454;
+    color: $color-dark-grey;
     padding-top: 3rem;
   }
 }
