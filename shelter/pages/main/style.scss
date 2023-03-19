@@ -67,7 +67,7 @@ $wrapper-padding: 0 4rem;
 }
 
 @font-face {
-  font-family: "Arial";
+  font-family: "Arial-Italic";
   src: url("../../assets/fonts/fonts/fonts/arial/arial-italic.ttf");
   font-weight: 400;
 }
@@ -90,6 +90,10 @@ body {
 }
 
 .header {
+  padding-top: 6rem;
+}
+
+.background-wrap {
   background-image: url(../../assets/images/start-screen-gradient-background.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -162,10 +166,7 @@ body {
   }
 }
 .not-only {
-  background-image: url(../../assets/images/start-screen-gradient-background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center -180px;
+  padding-top: 6rem;
 
   // .not-only__items-padding
 
@@ -173,7 +174,11 @@ body {
   }
 }
 .items {
-  @include flex-container();
+  // @include flex-container();
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // align-items: end;
 
   // .items__main-discribe-padding
 
@@ -192,20 +197,21 @@ body {
   }
 }
 .main-discribe {
+  display: flex;
   width: 39%;
+  flex-direction: column;
+  row-gap: 4.2rem;
 
   // .main-discribe__text
 
   &__text {
     @include font-Arial(1.5rem);
     color: $color-light-grey;
-    padding-top: 4.2rem;
   }
 
   // .main-discribe__btn-padding
 
   &__btn-padding {
-    margin-top: 4.2rem;
   }
 }
 .section-titles {
@@ -294,6 +300,8 @@ body {
   }
 }
 .img-puppi-cat {
+  width: 25%;
+  height: 25%;
 }
 
 .discribe-about {
@@ -400,7 +408,7 @@ body {
   @include flex-container(row, center);
   flex-wrap: wrap;
   row-gap: 5.5rem;
-  column-gap: 12rem;
+  column-gap: 11.7rem;
 
   // .help-items__icons
 
@@ -410,31 +418,31 @@ body {
     align-items: center;
 
     &_food {
-      width: 83px;
+      width: 8%;
     }
     &_transport {
-      width: 150px;
+      width: 15%;
     }
     &_toys {
-      width: 60px;
+      width: 6%;
     }
     &_bowls {
-      width: 154px;
+      width: 15.5%;
     }
     &_shampoos {
-      width: 101px;
+      width: 10%;
     }
     &_vitamins {
-      width: 89px;
+      width: 8.9%;
     }
     &_medicines {
-      width: 101px;
+      width: 10%;
     }
     &_collars {
-      width: 166px;
+      width: 16%;
     }
     &_sleeping {
-      width: 144px;
+      width: 14.4%;
     }
   }
 

@@ -4,7 +4,7 @@
   font-weight: 400;
 }
 @font-face {
-  font-family: "Arial";
+  font-family: "Arial-Italic";
   src: url("../../assets/fonts/fonts/fonts/arial/arial-italic.ttf");
   font-weight: 400;
 }
@@ -25,12 +25,16 @@ body {
 }
 
 .header {
+  padding-top: 6rem;
+}
+
+.background-wrap {
   background-image: url(../../assets/images/start-screen-gradient-background.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
 }
-.header__menu-padding {
+.background-wrap__menu-padding {
   padding: 6rem 0;
 }
 
@@ -102,10 +106,7 @@ body {
 }
 
 .not-only {
-  background-image: url(../../assets/images/start-screen-gradient-background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center -180px;
+  padding-top: 6rem;
 }
 .items {
   display: flex;
@@ -116,7 +117,10 @@ body {
   padding-top: 16.3rem;
 }
 .main-discribe {
+  display: flex;
   width: 39%;
+  flex-direction: column;
+  row-gap: 4.2rem;
 }
 .main-discribe__text {
   font-family: "Arial";
@@ -125,12 +129,7 @@ body {
   font-size: 1.5rem;
   line-height: 160%;
   color: #cdcdcd;
-  padding-top: 4.2rem;
 }
-.main-discribe__btn-padding {
-  margin-top: 4.2rem;
-}
-
 .section-titles {
   font-family: "Georgia";
   font-style: normal;
@@ -210,6 +209,11 @@ body {
 }
 .about__discribe-about-padding {
   margin-top: 1.4rem;
+}
+
+.img-puppi-cat {
+  width: 25%;
+  height: 25%;
 }
 
 .discribe-about {
@@ -317,7 +321,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   row-gap: 5.5rem;
-  column-gap: 12rem;
+  column-gap: 11.7rem;
 }
 .help-items__icons {
   display: flex;
@@ -325,31 +329,31 @@ body {
   align-items: center;
 }
 .help-items__icons_food {
-  width: 83px;
+  width: 8%;
 }
 .help-items__icons_transport {
-  width: 150px;
+  width: 15%;
 }
 .help-items__icons_toys {
-  width: 60px;
+  width: 6%;
 }
 .help-items__icons_bowls {
-  width: 154px;
+  width: 15.5%;
 }
 .help-items__icons_shampoos {
-  width: 101px;
+  width: 10%;
 }
 .help-items__icons_vitamins {
-  width: 89px;
+  width: 8.9%;
 }
 .help-items__icons_medicines {
-  width: 101px;
+  width: 10%;
 }
 .help-items__icons_collars {
-  width: 166px;
+  width: 16%;
 }
 .help-items__icons_sleeping {
-  width: 144px;
+  width: 14.4%;
 }
 .help-items__discribe {
   font-family: "Georgia";
