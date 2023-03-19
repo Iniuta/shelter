@@ -1,12 +1,14 @@
 $color-white: #ffffff;
 $color-dark-sections: #f6f6f6;
 $color-dark-grey: #545454;
-$color-pink-btn: #f1cdb3;
+$color-middle-grey: #b2b2b2;
 $color-light-grey: #cdcdcd;
+$color-pink-btn: #f1cdb3;
 $color-main-btn-text: #292929;
 $color-cards-background: #fafafa;
 $color-text-about: #4c4c4c;
 $sections-paddings: 8rem 0 10rem 0;
+$in-addition-paddings: 8rem 14.2rem 10rem 14.3rem;
 $width-container: 1200px;
 $wrapper-padding: 0 4rem;
 
@@ -17,7 +19,7 @@ $wrapper-padding: 0 4rem;
 }
 
 @mixin font-Arial-letter-spacing(
-  $font-size: 13px,
+  $font-size: 1.3rem,
   $line-height: 160%,
   $letter-spacing: 0.1em
 ) {
@@ -29,12 +31,20 @@ $wrapper-padding: 0 4rem;
   letter-spacing: $letter-spacing;
 }
 
-@mixin font-Arial($font-size: 13px, $line-height: 160%) {
+@mixin font-Arial($font-size: 1.3rem, $line-height: 160%) {
   font-family: "Arial";
   font-style: normal;
   font-weight: 400;
   font-size: $font-size;
   line-height: $line-height;
+}
+
+@mixin font-Arial-italic() {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 150%;
 }
 
 @mixin font-Georgia(
@@ -151,13 +161,13 @@ body {
     text-decoration: underline 3px $color-pink-btn;
   }
 }
-.section-1 {
+.not-only {
   background-image: url(../../assets/images/start-screen-gradient-background.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center -180px;
 
-  // .section-1__items-padding
+  // .not-only__items-padding
 
   &__items-padding {
   }
@@ -201,7 +211,7 @@ body {
 .section-titles {
   @include font-Georgia(4.4rem, 130%, 0);
   color: $color-white;
-  width: 70%;
+  width: 80%;
 
   // .section-titles_space-letters
 
@@ -217,11 +227,20 @@ body {
     width: 100%;
     text-align: center;
   }
+
   // .section-titles_help
+
   &_help {
     width: 31%;
     margin: auto;
     text-align: center;
+  }
+
+  // .section-titles_footer-txt-color
+
+  &_footer-txt-color {
+    width: 100%;
+    color: $color-white;
   }
 }
 .main-button {
@@ -252,9 +271,9 @@ body {
   height: auto;
   width: 58.2%;
 }
-.section-2 {
+.about-section {
   background: $color-white;
-  // .section-2__about-padding
+  // .about-section__about-padding
 
   &__about-padding {
     padding: $sections-paddings;
@@ -289,9 +308,9 @@ body {
     color: $color-text-about;
   }
 }
-.section-3 {
+.our-friends-section {
   background: $color-dark-sections;
-  // .section-3__friends-padding
+  // .our-friends-section__friends-padding
 
   &__friends-padding {
     padding: $sections-paddings;
@@ -314,8 +333,7 @@ body {
   @include flex-container();
 }
 .btn-aside {
-  display: flex;
-  justify-content: center;
+  @include flex-container(row, center);
   align-items: center;
   width: 52px;
   height: 52px;
@@ -364,7 +382,7 @@ body {
 }
 .btn-section-3 {
 }
-.section-4 {
+.help-section {
   background: $color-white;
 }
 .help {
@@ -379,8 +397,7 @@ body {
 }
 
 .help-items {
-  display: flex;
-  justify-content: center;
+  @include flex-container(row, center);
   flex-wrap: wrap;
   row-gap: 5.5rem;
   column-gap: 12rem;
@@ -435,61 +452,129 @@ body {
     padding-top: 3rem;
   }
 }
-.section-5 {
+.in-addition-section {
   background: $color-dark-sections;
-  // .section-5__donation-padding
+  // .in-addition-section__donation-padding
 
   &__donation-padding {
+    padding: $in-addition-paddings;
   }
 }
 .donation {
+  @include flex-container(row, space-between);
   // .donation__donation-info-padding
 
   &__donation-info-padding {
   }
 }
 .donation-img {
+  margin: 1.1rem 0 1rem 0;
 }
 .img-dog-donation {
+  width: 100%;
 }
 .donation-info {
+  width: 41.5%;
+  @include flex-container(column, space-between);
+
   // .donation-info__bank
 
   &__bank {
+    @include font-Georgia(1.5rem);
+    color: $color-dark-grey;
   }
 
   // .donation-info__field-credit-card
 
   &__field-credit-card {
+    width: 91.8%;
+    height: 44px;
+    @include flex-container(row, center);
+    align-items: center;
+    gap: 1.5rem;
+    background: $color-pink-btn;
+    border-radius: 9px;
   }
 
   // .donation-info__card-number
 
   &__card-number {
+    @include font-Georgia(2rem, 115%);
+    color: $color-dark-grey;
   }
 
   // .donation-info__discribe
 
   &__discribe {
+    @include font-Arial-italic();
+    color: $color-middle-grey;
   }
 }
-.footer {
-  // .footer__items-padding
 
-  &__items-padding {
+//nnnnnnnnnnnnnnnnnnnnnnnnn
+.footer {
+  background-image: url(../../assets/images/footer-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wrapper {
+}
+.footer-items {
+  @include flex-container();
+
+  //footer-items__padding
+
+  &__padding {
+    margin-top: 5.6rem;
+  }
+
+  // .footer-items__column
+
+  &__column {
+    @include flex-container(column, start);
+    align-items: start;
+    &_col-1 {
+      width: 279px;
+      row-gap: 4rem;
+    }
+
+    &_col-2 {
+      width: 302px;
+      row-gap: 3.2rem;
+    }
+  }
+}
+.section-titles {
+  // .section-titles_space-letters
+
+  &_space-letters {
+  }
+
+  // .section-titles_footer-txt-color
+
+  &_footer-txt-color {
   }
 }
 .items-links {
+  // @include flex-container(row, center);
+  // gap: 2rem;
 }
 .link {
+  @include flex-container(row, center);
+  align-items: center;
+  gap: 2rem;
 }
 .item-links {
   // .item-links_text
 
   &_text {
+    @include font-Georgia(2rem, 115%);
+    color: $color-pink-btn;
   }
 }
 .img-footer-puppi {
+  width: 25%;
+  margin-top: 4rem;
 }
-.hidden {
-}
+
+//nnnnnnnnnnnnnnnnnnnnnnnnn

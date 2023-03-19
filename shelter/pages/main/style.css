@@ -60,7 +60,6 @@ body {
   font-size: 32px;
   line-height: 110%;
   letter-spacing: 0.06em;
-  font-family: "Georgia";
   color: #f1cdb3;
 }
 .logo__discribe {
@@ -102,7 +101,7 @@ body {
   text-decoration: underline 3px #f1cdb3;
 }
 
-.section-1 {
+.not-only {
   background-image: url(../../assets/images/start-screen-gradient-background.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -140,7 +139,7 @@ body {
   line-height: 130%;
   letter-spacing: 0;
   color: #ffffff;
-  width: 70%;
+  width: 80%;
 }
 .section-titles_space-letters {
   font-size: 3.5rem;
@@ -155,6 +154,10 @@ body {
   width: 31%;
   margin: auto;
   text-align: center;
+}
+.section-titles_footer-txt-color {
+  width: 100%;
+  color: #ffffff;
 }
 
 .main-button {
@@ -192,10 +195,10 @@ body {
   width: 58.2%;
 }
 
-.section-2 {
+.about-section {
   background: #ffffff;
 }
-.section-2__about-padding {
+.about-section__about-padding {
   padding: 8rem 0 10rem 0;
 }
 
@@ -226,10 +229,10 @@ body {
   color: #4c4c4c;
 }
 
-.section-3 {
+.our-friends-section {
   background: #f6f6f6;
 }
-.section-3__friends-padding {
+.our-friends-section__friends-padding {
   padding: 8rem 0 10rem 0;
 }
 
@@ -245,7 +248,7 @@ body {
   margin-top: 19rem;
 }
 
-.frends-items {
+.friends-items {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -254,6 +257,7 @@ body {
 
 .btn-aside {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 52px;
@@ -295,7 +299,7 @@ body {
   padding: 2.9rem 4rem;
 }
 
-.section-4 {
+.help-section {
   background: #ffffff;
 }
 
@@ -309,6 +313,7 @@ body {
 
 .help-items {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
   row-gap: 5.5rem;
@@ -358,8 +363,120 @@ body {
   padding-top: 3rem;
 }
 
-.section-5 {
+.in-addition-section {
   background: #f6f6f6;
+}
+.in-addition-section__donation-padding {
+  padding: 8rem 14.2rem 10rem 14.3rem;
+}
+
+.donation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.donation-img {
+  margin: 1.1rem 0 1rem 0;
+}
+
+.img-dog-donation {
+  width: 100%;
+}
+
+.donation-info {
+  width: 41.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.donation-info__bank {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+.donation-info__field-credit-card {
+  width: 91.8%;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background: #f1cdb3;
+  border-radius: 9px;
+}
+.donation-info__card-number {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+.donation-info__discribe {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 150%;
+  color: #b2b2b2;
+}
+
+.footer {
+  background-image: url(../../assets/images/footer-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer-items__padding {
+  margin-top: 5.6rem;
+}
+.footer-items__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.footer-items__column_col-1 {
+  width: 279px;
+  row-gap: 4rem;
+}
+.footer-items__column_col-2 {
+  width: 302px;
+  row-gap: 3.2rem;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.item-links_text {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+}
+
+.img-footer-puppi {
+  width: 25%;
+  margin-top: 4rem;
 }
 
 /*# sourceMappingURL=style.css.map */
