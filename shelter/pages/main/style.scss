@@ -132,6 +132,11 @@ body {
   &__title {
     @include font-Georgia();
     color: $color-pink-btn;
+    transition: 1s;
+    &:hover {
+      color: $color-hover;
+      transition: 0.4s;
+    }
   }
 
   // .logo__discribe
@@ -188,6 +193,13 @@ body {
   }
   &_hover:hover::after {
     width: 100%;
+  }
+
+  &_hover-link:hover {
+    color: $color-cards-background;
+  }
+  &_hover:hover {
+    color: $color-cards-background;
   }
 }
 .not-only {
