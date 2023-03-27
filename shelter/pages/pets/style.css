@@ -128,7 +128,6 @@ body {
 }
 .list-item_hover:hover::after {
   width: 100%;
-  color: #292929;
 }
 .list-item_hover-link:hover {
   color: #292929;
