@@ -191,9 +191,9 @@ body {
     transition: 0.3s;
     cursor: pointer;
   }
-  &_hover:hover::after {
-    width: 100%;
-  }
+  // &_hover:hover::after {
+  //   width: 100%;
+  // }
 
   &_hover-link:hover {
     color: $color-cards-background;

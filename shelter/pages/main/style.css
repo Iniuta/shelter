@@ -136,9 +136,6 @@ body {
   transition: 0.3s;
   cursor: pointer;
 }
-.list-item_hover:hover::after {
-  width: 100%;
-}
 .list-item_hover-link:hover {
   color: #fafafa;
 }
@@ -220,7 +217,7 @@ body {
   transition: 0.4s;
 }
 .main-button:hover {
-  background: #FDDCC4;
+  background: #fddcc4;
   transition: 0.4s;
 }
 .main-button_lern-more {
