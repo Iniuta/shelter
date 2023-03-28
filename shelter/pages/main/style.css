@@ -136,11 +136,19 @@ body {
   transition: 0.3s;
   cursor: pointer;
 }
+.list-item_hover-link {
+  transition: 0.4s;
+}
+.list-item_hover {
+  transition: 0.4s;
+}
 .list-item_hover-link:hover {
   color: #fafafa;
+  transition: 0.4s;
 }
 .list-item_hover:hover {
   color: #fafafa;
+  transition: 0.4s;
 }
 
 .not-only {

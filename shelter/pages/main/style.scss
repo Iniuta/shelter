@@ -195,11 +195,20 @@ body {
   //   width: 100%;
   // }
 
+  &_hover-link {
+    transition: 0.4s;
+  }
+  &_hover {
+    transition: 0.4s;
+  }
+
   &_hover-link:hover {
     color: $color-cards-background;
+    transition: 0.4s;
   }
   &_hover:hover {
     color: $color-cards-background;
+    transition: 0.4s;
   }
 }
 .not-only {
