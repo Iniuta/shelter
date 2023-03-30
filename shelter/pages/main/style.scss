@@ -10,8 +10,10 @@ $color-text-about: #4c4c4c;
 $color-hover: #fddcc4;
 $sections-paddings: 8rem 0 10rem 0;
 $in-addition-paddings: 8rem 14.2rem 10rem 14.3rem;
-$width-container: 1200px;
 $wrapper-padding: 0 4rem;
+$width-container: 1200px;
+$tablet-width: 1279px;
+$mobile-width: 767px;
 
 @mixin flex-container($flex-direction: row, $justify-content: space-between) {
   display: flex;
@@ -61,6 +63,17 @@ $wrapper-padding: 0 4rem;
   letter-spacing: $letter-spacing;
 }
 
+@mixin media-tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+@mixin media-mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
 @font-face {
   font-family: "Arial";
   src: url("../../assets/fonts/fonts/fonts/arial/arial-regular.ttf");
@@ -100,6 +113,9 @@ body {
 
 .header {
   padding-top: 6rem;
+  @include media-tablet {
+    padding-top: calc(3rem + (6 - 3) * ((100vw - 320px) / (1280 - 320)));
+  }
 }
 
 .background-wrap {
@@ -117,6 +133,10 @@ body {
   max-width: $width-container;
   margin: auto;
   padding: $wrapper-padding;
+  @include media-tablet {
+    padding-right: calc(3rem + (6 - 3) * ((100vw - 768px) / (1280 - 768)));
+    padding-left: calc(3rem + (6 - 3) * ((100vw - 768px) / (1280 - 768)));
+  }
 }
 .menu {
   @include flex-container();
@@ -675,4 +695,3 @@ body {
   width: 25%;
   margin-top: 4rem;
 }
-

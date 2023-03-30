@@ -35,6 +35,11 @@ body {
 .header {
   padding-top: 6rem;
 }
+@media (max-width: 1279px) {
+  .header {
+    padding-top: calc(3rem + 3 * (100vw - 320px) / 960);
+  }
+}
 
 .background-wrap {
   background-image: url(../../assets/images/start-screen-gradient-background.png);
@@ -50,6 +55,12 @@ body {
   max-width: 1200px;
   margin: auto;
   padding: 0 4rem;
+}
+@media (max-width: 1279px) {
+  .wrapper {
+    padding-right: calc(3rem + 3 * (100vw - 768px) / 512);
+    padding-left: calc(3rem + 3 * (100vw - 768px) / 512);
+  }
 }
 
 .menu {
