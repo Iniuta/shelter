@@ -8,10 +8,12 @@ $color-main-btn-text: #292929;
 $color-cards-background: #fafafa;
 $color-text-about: #4c4c4c;
 $color-hover: #fddcc4;
-$sections-paddings: 8rem 0 10.2rem 0;
+$sections-paddings: 8rem 0 10rem 0;
 $in-addition-paddings: 8rem 14.2rem 10rem 14.3rem;
-$width-container: 1200px;
 $wrapper-padding: 0 4rem;
+$width-container: 1200px;
+$tablet-width: 992px;
+$mobile-width: 767px;
 
 @mixin flex-container($flex-direction: row, $justify-content: space-between) {
   display: flex;
@@ -59,6 +61,17 @@ $wrapper-padding: 0 4rem;
   font-size: $font-size;
   line-height: $line-height;
   letter-spacing: $letter-spacing;
+}
+
+@mixin media-tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+@mixin media-mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
 }
 
 @font-face {
@@ -109,6 +122,10 @@ body {
   max-width: $width-container;
   margin: auto;
   padding: $wrapper-padding;
+  @include media-tablet {
+    padding-right: calc(3rem + (6 - 3) * ((100vw - 768px) / (1280 - 768)));
+    padding-left: calc(3rem + (6 - 3) * ((100vw - 768px) / (1280 - 768)));
+  }
 }
 .menu {
   @include flex-container();
@@ -118,6 +135,9 @@ body {
   @include flex-container(column);
   height: 6rem;
   cursor: pointer;
+  @include media-tablet {
+    align-items: center;
+  }
   // .logo__title
 
   &__title {
@@ -139,12 +159,18 @@ body {
 }
 .navigation {
   width: 37%;
+  @include media-tablet {
+    width: 62.7%;
+  }
   // .navigation__list
 
   &__list {
     @include flex-container();
     align-items: center;
     max-width: 44.3rem;
+    @include media-tablet {
+      align-items: flex-start;
+    }
   }
 
   // .navigation__list-item
@@ -202,6 +228,9 @@ body {
 
   &__friends-padding {
     padding: $sections-paddings;
+    @include media-tablet {
+      padding: 8rem 0 7.4rem 0;
+    }
   }
 }
 .friends {
@@ -210,6 +239,9 @@ body {
 
   &__cards-items-padding {
     padding: 6rem 0;
+    @include media-tablet {
+      padding: 3rem 0 4rem 0;
+    }
   }
 }
 .section-titles {
@@ -239,6 +271,18 @@ body {
   }
 }
 
+.scarlett {
+  @include media-tablet {
+    display: none;
+  }
+}
+
+.freddie {
+  @include media-tablet {
+    display: none;
+  }
+}
+
 .cards-items {
   @include flex-container(row, center);
   width: 100%;
@@ -253,6 +297,9 @@ body {
     transition: 0.4s;
     border-radius: 9px;
     cursor: pointer;
+    @include media-tablet {
+      width: 38.2%;
+    }
     &:hover {
       box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
         rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -369,14 +416,31 @@ body {
   @include flex-container(row, space-between);
   align-items: center;
   margin: 0 auto;
+  @include media-tablet {
+    width: 51%;
+  }
 }
 .footer {
   background-image: url(../../assets/images/footer-background.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.wrap-footer-items {
+  display: flex;
+  gap: 16rem;
+  @include media-tablet {
+    padding: 0 3.4rem;
+    gap: 6rem;
+  }
+}
+
 .footer-items {
   @include flex-container();
+  @include media-tablet {
+    flex-direction: column;
+    align-items: center;
+  }
   // .footer-items__column
 
   &__column {
@@ -401,6 +465,9 @@ body {
 
   &__padding {
     margin-top: 5.6rem;
+    @include media-tablet {
+      margin-top: 3rem;
+    }
   }
 }
 .items-links {
@@ -421,4 +488,8 @@ body {
 .img-footer-puppi {
   width: 25%;
   margin-top: 4rem;
+  @include media-tablet {
+    width: 42%;
+    margin-top: 6.4rem;
+  }
 }
