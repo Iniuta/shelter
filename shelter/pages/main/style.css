@@ -77,6 +77,11 @@ body {
   height: 6rem;
   cursor: pointer;
 }
+@media (max-width: 1279px) {
+  .logo {
+    align-items: center;
+  }
+}
 .logo__title {
   font-family: "Georgia";
   font-style: normal;
@@ -104,12 +109,22 @@ body {
 .navigation {
   width: 37%;
 }
+@media (max-width: 1279px) {
+  .navigation {
+    width: 62.7%;
+  }
+}
 .navigation__list {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   max-width: 44.3rem;
+}
+@media (max-width: 1279px) {
+  .navigation__list {
+    align-items: flex-start;
+  }
 }
 .navigation__list-item {
   font-family: "Arial";
@@ -170,14 +185,36 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+@media (max-width: 1279px) {
+  .items {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .items__main-discribe-padding {
   padding-top: 16.3rem;
+}
+@media (max-width: 1279px) {
+  .items__main-discribe-padding {
+    padding-top: 0rem;
+  }
+}
+@media (max-width: 1279px) {
+  .items__img-padding {
+    padding-top: 10rem;
+    padding-left: 7rem;
+  }
 }
 .main-discribe {
   display: flex;
   width: 39%;
   flex-direction: column;
   row-gap: 4.2rem;
+}
+@media (max-width: 1279px) {
+  .main-discribe {
+    width: 66%;
+  }
 }
 .main-discribe__text {
   font-family: "Arial";
@@ -235,6 +272,11 @@ body {
   text-align: center;
   transition: 0.4s;
 }
+@media (max-width: 1279px) {
+  .main-button {
+    margin: auto;
+  }
+}
 .main-button:hover {
   background: #fddcc4;
   transition: 0.4s;
@@ -252,9 +294,20 @@ body {
   align-items: center;
 }
 
-.img-puppi {
+.image-puppi {
+  max-width: 58.2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+@media (max-width: 1279px) {
+  .image-puppi {
+    max-width: 80.1%;
+  }
+}
+.image-puppi__img-puppi {
   height: auto;
-  width: 58.2%;
+  width: 100%;
 }
 
 .about-section {
@@ -263,12 +316,24 @@ body {
 .about-section__about-padding {
   padding: 8rem 0 10rem 0;
 }
+@media (max-width: 1279px) {
+  .about-section__about-padding {
+    padding: 6.5rem 0 10rem 0;
+  }
+}
 
 .about {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 12rem;
+}
+@media (max-width: 1279px) {
+  .about {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 6.9rem;
+  }
 }
 .about__discribe-about-padding {
   margin-top: 1.4rem;
@@ -278,6 +343,12 @@ body {
   width: 25%;
   height: 25%;
 }
+@media (max-width: 1279px) {
+  .img-puppi-cat {
+    width: 42%;
+    height: 42%;
+  }
+}
 
 .discribe-about {
   display: flex;
@@ -285,6 +356,12 @@ body {
   justify-content: space-between;
   width: 36%;
   padding-bottom: 1.4rem;
+}
+@media (max-width: 1279px) {
+  .discribe-about {
+    width: 61%;
+    row-gap: 2.5rem;
+  }
 }
 .discribe-about__text-discribe {
   width: 100%;

@@ -147,6 +147,9 @@ body {
   @include flex-container(column);
   height: 6rem;
   cursor: pointer;
+  @include media-tablet {
+    align-items: center;
+  }
   // .logo__title
 
   &__title {
@@ -168,12 +171,18 @@ body {
 }
 .navigation {
   width: 37%;
+  @include media-tablet {
+    width: 62.7%;
+  }
   // .navigation__list
 
   &__list {
     @include flex-container();
     align-items: center;
     max-width: 44.3rem;
+    @include media-tablet {
+      align-items: flex-start;
+    }
   }
 
   // .navigation__list-item
@@ -245,16 +254,27 @@ body {
   flex-direction: row;
   justify-content: space-between;
   // align-items: end;
+  @include media-tablet {
+    flex-direction: column;
+    align-items: center;
+  }
 
   // .items__main-discribe-padding
 
   &__main-discribe-padding {
     padding-top: 16.3rem;
+    @include media-tablet {
+      padding-top: 0rem;
+    }
   }
 
   // .items__img-padding
 
   &__img-padding {
+    @include media-tablet {
+      padding-top: 10rem;
+      padding-left: 7rem;
+    }
   }
 
   // .items__column
@@ -267,6 +287,9 @@ body {
   width: 39%;
   flex-direction: column;
   row-gap: 4.2rem;
+  @include media-tablet {
+    width: 66%;
+  }
 
   // .main-discribe__text
 
@@ -326,6 +349,9 @@ body {
   color: $color-main-btn-text;
   text-align: center;
   transition: 0.4s;
+  @include media-tablet {
+    margin: auto;
+  }
   &:hover {
     background: #fddcc4;
     transition: 0.4s;
@@ -345,22 +371,39 @@ body {
     align-items: center;
   }
 }
-
-.img-puppi {
-  height: auto;
-  width: 58.2%;
+.image-puppi {
+  max-width: 58.2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  @include media-tablet {
+    max-width: 80.1%;
+  }
+  &__img-puppi {
+    height: auto;
+    width: 100%;
+  }
 }
+
 .about-section {
   background: $color-white;
   // .about-section__about-padding
 
   &__about-padding {
     padding: $sections-paddings;
+    @include media-tablet {
+      padding: 6.5rem 0 10rem 0;
+    }
   }
 }
 .about {
   @include flex-container(row, center);
   gap: 12rem;
+  @include media-tablet {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 6.9rem;
+  }
   // .about__img-padding
 
   &__img-padding {
@@ -375,12 +418,20 @@ body {
 .img-puppi-cat {
   width: 25%;
   height: 25%;
+  @include media-tablet {
+    width: 42%;
+    height: 42%;
+  }
 }
 
 .discribe-about {
   @include flex-container(column);
   width: 36%;
   padding-bottom: 1.4rem;
+  @include media-tablet {
+    width: 61%;
+    row-gap: 2.5rem;
+  }
   // .discribe-about__text-discribe
 
   &__text-discribe {
