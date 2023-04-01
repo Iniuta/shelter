@@ -383,6 +383,9 @@ body {
     @include media-tablet {
       width: 50%;
     }
+    @include media-mobile {
+      width: 80%;
+    }
   }
 
   // .section-titles_footer-txt-color
@@ -682,12 +685,18 @@ body {
   width: 100%;
 
   margin: $sections-paddings;
+  @include media-mobile {
+    margin: 4.1rem 0 0;
+  }
   // .help__help-items-padding
 
   &__help-items-padding {
     margin: 6rem 8.2rem;
     @include media-tablet {
       margin: 6rem 1.5rem;
+    }
+    @include media-mobile {
+      margin: 4.2rem 0.5rem 4.1rem 0.5rem;
     }
   }
 }
@@ -700,6 +709,10 @@ body {
   @include media-tablet {
     column-gap: 0rem;
   }
+  @include media-mobile {
+    row-gap: 3rem;
+    column-gap: 3rem;
+  }
 
   // .help-items__icons
 
@@ -710,6 +723,11 @@ body {
     @include media-tablet {
       flex-basis: 170px;
       flex-grow: 1;
+    }
+    @include media-mobile {
+      flex-basis: 130px;
+      margin-right: auto;
+      flex-grow: 0;
     }
 
     &_food {
@@ -771,6 +789,9 @@ body {
   // .help-items__icon
 
   &__icon {
+    @include media-mobile {
+      max-height: 50px;
+    }
   }
 
   // .help-items__discribe
@@ -780,6 +801,10 @@ body {
     text-align: center;
     color: $color-dark-grey;
     padding-top: 3rem;
+    @include media-mobile {
+      font-size: 1.5rem;
+      padding-top: 2rem;
+    }
   }
 }
 .in-addition-section {
@@ -790,6 +815,9 @@ body {
     padding: $in-addition-paddings;
     @include media-tablet {
       padding: 8rem 9.2rem 8.9rem 9.3rem;
+    }
+    @include media-mobile {
+      padding: 0rem;
     }
   }
 }

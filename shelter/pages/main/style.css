@@ -310,6 +310,11 @@ body {
     width: 50%;
   }
 }
+@media (max-width: 767px) {
+  .section-titles_help {
+    width: 80%;
+  }
+}
 .section-titles_footer-txt-color {
   width: 100%;
   color: #ffffff;
@@ -644,12 +649,22 @@ body {
   width: 100%;
   margin: 8rem 0 10rem 0;
 }
+@media (max-width: 767px) {
+  .help {
+    margin: 4.1rem 0 0;
+  }
+}
 .help__help-items-padding {
   margin: 6rem 8.2rem;
 }
 @media (max-width: 992px) {
   .help__help-items-padding {
     margin: 6rem 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .help__help-items-padding {
+    margin: 4.2rem 0.5rem 4.1rem 0.5rem;
   }
 }
 
@@ -666,6 +681,12 @@ body {
     column-gap: 0rem;
   }
 }
+@media (max-width: 767px) {
+  .help-items {
+    row-gap: 3rem;
+    column-gap: 3rem;
+  }
+}
 .help-items__icons {
   display: flex;
   flex-direction: column;
@@ -675,6 +696,13 @@ body {
   .help-items__icons {
     flex-basis: 170px;
     flex-grow: 1;
+  }
+}
+@media (max-width: 767px) {
+  .help-items__icons {
+    flex-basis: 130px;
+    margin-right: auto;
+    flex-grow: 0;
   }
 }
 .help-items__icons_food {
@@ -749,6 +777,11 @@ body {
     width: 0;
   }
 }
+@media (max-width: 767px) {
+  .help-items__icon {
+    max-height: 50px;
+  }
+}
 .help-items__discribe {
   font-family: "Georgia";
   font-style: normal;
@@ -760,6 +793,12 @@ body {
   color: #545454;
   padding-top: 3rem;
 }
+@media (max-width: 767px) {
+  .help-items__discribe {
+    font-size: 1.5rem;
+    padding-top: 2rem;
+  }
+}
 
 .in-addition-section {
   background: #f6f6f6;
@@ -770,6 +809,11 @@ body {
 @media (max-width: 992px) {
   .in-addition-section__donation-padding {
     padding: 8rem 9.2rem 8.9rem 9.3rem;
+  }
+}
+@media (max-width: 767px) {
+  .in-addition-section__donation-padding {
+    padding: 0rem;
   }
 }
 
