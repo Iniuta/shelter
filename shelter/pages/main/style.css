@@ -319,6 +319,11 @@ body {
   width: 100%;
   color: #ffffff;
 }
+@media (max-width: 767px) {
+  .section-titles_footer-txt-color {
+    width: 97%;
+  }
+}
 
 .main-button {
   display: flex;
@@ -813,7 +818,7 @@ body {
 }
 @media (max-width: 767px) {
   .in-addition-section__donation-padding {
-    padding: 0rem;
+    padding: 4.2rem 0rem;
   }
 }
 
@@ -829,8 +834,18 @@ body {
     row-gap: 5rem;
   }
 }
+@media (max-width: 767px) {
+  .donation {
+    row-gap: 4rem;
+  }
+}
 .donation-img {
   margin: 1.1rem 0 1rem 0;
+}
+@media (max-width: 767px) {
+  .donation-img {
+    margin: 0rem 2rem;
+  }
 }
 
 .img-dog-donation {
@@ -850,6 +865,13 @@ body {
     align-self: center;
   }
 }
+@media (max-width: 767px) {
+  .donation-info {
+    width: 95%;
+    align-items: center;
+    row-gap: 2.3rem;
+  }
+}
 .donation-info__bank {
   font-family: "Georgia";
   font-style: normal;
@@ -859,9 +881,14 @@ body {
   letter-spacing: 0.06em;
   color: #545454;
 }
+@media (max-width: 767px) {
+  .donation-info__bank {
+    letter-spacing: 0em;
+  }
+}
 .donation-info__field-credit-card {
   width: 91.8%;
-  height: 44px;
+  height: 43px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -876,6 +903,11 @@ body {
   background: #fddcc4;
   transition: 0.4s;
 }
+@media (max-width: 767px) {
+  .donation-info__field-credit-card {
+    width: 98%;
+  }
+}
 .donation-info__card-number {
   font-family: "Georgia";
   font-style: normal;
@@ -885,6 +917,11 @@ body {
   letter-spacing: 0.06em;
   color: #545454;
 }
+@media (max-width: 767px) {
+  .donation-info__card-number {
+    font-size: 1.5rem;
+  }
+}
 .donation-info__discribe {
   font-family: "Arial";
   font-style: italic;
@@ -892,6 +929,12 @@ body {
   font-size: 1.2rem;
   line-height: 150%;
   color: #b2b2b2;
+}
+@media (max-width: 767px) {
+  .donation-info__discribe {
+    text-align: justify;
+    line-height: 148%;
+  }
 }
 
 .footer {
@@ -908,6 +951,13 @@ body {
   .wrap-footer-items {
     padding: 0 3.4rem;
     gap: 6rem;
+  }
+}
+@media (max-width: 767px) {
+  .wrap-footer-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 }
 
@@ -940,9 +990,19 @@ body {
   width: 279px;
   row-gap: 4rem;
 }
+@media (max-width: 767px) {
+  .footer-items__column_col-1 {
+    align-items: center;
+  }
+}
 .footer-items__column_col-2 {
   width: 302px;
   row-gap: 3.2rem;
+}
+@media (max-width: 767px) {
+  .footer-items__column_col-2 {
+    row-gap: 4rem;
+  }
 }
 
 .link {
@@ -971,6 +1031,12 @@ body {
   .img-footer-puppi {
     width: 42%;
     margin-top: 6.4rem;
+  }
+}
+@media (max-width: 767px) {
+  .img-footer-puppi {
+    width: 87%;
+    margin-top: 3.9rem;
   }
 }
 

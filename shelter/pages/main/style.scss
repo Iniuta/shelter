@@ -393,6 +393,9 @@ body {
   &_footer-txt-color {
     width: 100%;
     color: $color-white;
+    @include media-mobile {
+      width: 97%;
+    }
   }
 }
 .main-button {
@@ -817,7 +820,7 @@ body {
       padding: 8rem 9.2rem 8.9rem 9.3rem;
     }
     @include media-mobile {
-      padding: 0rem;
+      padding: 4.2rem 0rem;
     }
   }
 }
@@ -828,6 +831,9 @@ body {
     align-items: center;
     row-gap: 5rem;
   }
+  @include media-mobile {
+    row-gap: 4rem;
+  }
   // .donation__donation-info-padding
 
   &__donation-info-padding {
@@ -835,6 +841,9 @@ body {
 }
 .donation-img {
   margin: 1.1rem 0 1rem 0;
+  @include media-mobile {
+    margin: 0rem 2rem;
+  }
 }
 .img-dog-donation {
   width: 100%;
@@ -847,19 +856,27 @@ body {
     row-gap: 1.9rem;
     align-self: center;
   }
+  @include media-mobile {
+    width: 95%;
+    align-items: center;
+    row-gap: 2.3rem;
+  }
 
   // .donation-info__bank
 
   &__bank {
     @include font-Georgia(1.5rem);
     color: $color-dark-grey;
+    @include media-mobile {
+      letter-spacing: 0em;
+    }
   }
 
   // .donation-info__field-credit-card
 
   &__field-credit-card {
     width: 91.8%;
-    height: 44px;
+    height: 43px;
     @include flex-container(row, center);
     align-items: center;
     gap: 1.5rem;
@@ -871,6 +888,9 @@ body {
       background: $color-hover;
       transition: 0.4s;
     }
+    @include media-mobile {
+      width: 98%;
+    }
   }
 
   // .donation-info__card-number
@@ -878,6 +898,9 @@ body {
   &__card-number {
     @include font-Georgia(2rem, 115%);
     color: $color-dark-grey;
+    @include media-mobile {
+      font-size: 1.5rem;
+    }
   }
 
   // .donation-info__discribe
@@ -885,6 +908,10 @@ body {
   &__discribe {
     @include font-Arial-italic();
     color: $color-middle-grey;
+    @include media-mobile {
+      text-align: justify;
+      line-height: 148%;
+    }
   }
 }
 
@@ -900,6 +927,11 @@ body {
   @include media-tablet {
     padding: 0 3.4rem;
     gap: 6rem;
+  }
+  @include media-mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 }
 .wrapper {
@@ -929,11 +961,17 @@ body {
     &_col-1 {
       width: 279px;
       row-gap: 4rem;
+      @include media-mobile {
+        align-items: center;
+      }
     }
 
     &_col-2 {
       width: 302px;
       row-gap: 3.2rem;
+      @include media-mobile {
+        row-gap: 4rem;
+      }
     }
   }
 }
@@ -969,6 +1007,10 @@ body {
   @include media-tablet {
     width: 42%;
     margin-top: 6.4rem;
+  }
+  @include media-mobile {
+    width: 87%;
+    margin-top: 3.9rem;
   }
 }
 
