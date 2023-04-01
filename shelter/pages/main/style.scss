@@ -581,14 +581,18 @@ body {
   }
 
   &__left {
-    position: absolute;
-    top: calc(100vw - 12px);
-    left: 58px;
+    @include media-mobile {
+      position: absolute;
+      top: calc(100vw - 12px);
+      left: 58px;
+    }
   }
   &__right {
-    position: absolute;
-    top: calc(100vw - 12px);
-    left: 190px;
+    @include media-mobile {
+      position: absolute;
+      top: calc(100vw - 12px);
+      left: 190px;
+    }
   }
 }
 
