@@ -429,6 +429,9 @@ body {
     @include media-tablet {
       width: 37%;
     }
+    @include media-mobile {
+      width: 86.7%;
+    }
   }
 }
 .image-puppi {
@@ -525,6 +528,9 @@ body {
 
   &__friends-padding {
     padding: $sections-paddings;
+    @include media-mobile {
+      padding: 4rem 0 4.2rem 0;
+    }
   }
 }
 .friends {
@@ -536,6 +542,9 @@ body {
     @include media-tablet {
       padding: 6.1rem 0;
     }
+    @include media-mobile {
+      padding: 4.3rem 0 11.6rem 0;
+    }
   }
 
   &__btn-aside-padding {
@@ -545,6 +554,10 @@ body {
 .friends-items {
   width: 100%;
   @include flex-container();
+  @include media-mobile {
+    position: relative;
+    justify-content: center;
+  }
 }
 .btn-aside {
   @include flex-container(row, center);
@@ -560,6 +573,17 @@ body {
     border: 2px solid $color-hover;
     transition: 0.4s;
   }
+
+  &__left {
+    position: absolute;
+    top: calc(100vw - 12px);
+    left: 58px;
+  }
+  &__right {
+    position: absolute;
+    top: calc(100vw - 12px);
+    left: 190px;
+  }
 }
 
 .woody {
@@ -568,10 +592,19 @@ body {
   }
 }
 
+.jennifer {
+  @include media-mobile() {
+    display: none;
+  }
+}
+
 .cards-items {
   width: 82.5%;
   @include flex-container();
   flex-wrap: wrap;
+  @include media-mobile {
+    width: 90%;
+  }
 
   // .cards-items__item-element
 
@@ -581,6 +614,9 @@ body {
     border-radius: 9px;
     @include media-tablet {
       width: 46.2%;
+    }
+    @include media-mobile {
+      width: 100%;
     }
     cursor: pointer;
     &:hover {

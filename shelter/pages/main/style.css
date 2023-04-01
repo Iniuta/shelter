@@ -365,6 +365,11 @@ body {
     width: 37%;
   }
 }
+@media (max-width: 767px) {
+  .main-button_get-rest {
+    width: 86.7%;
+  }
+}
 
 .image-puppi {
   max-width: 58.2%;
@@ -480,6 +485,11 @@ body {
 .our-friends-section__friends-padding {
   padding: 8rem 0 10rem 0;
 }
+@media (max-width: 767px) {
+  .our-friends-section__friends-padding {
+    padding: 4rem 0 4.2rem 0;
+  }
+}
 
 .friends {
   display: flex;
@@ -494,6 +504,11 @@ body {
     padding: 6.1rem 0;
   }
 }
+@media (max-width: 767px) {
+  .friends__friends-items-padding {
+    padding: 4.3rem 0 11.6rem 0;
+  }
+}
 .friends__btn-aside-padding {
   margin-top: 19rem;
 }
@@ -503,6 +518,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .friends-items {
+    position: relative;
+    justify-content: center;
+  }
 }
 
 .btn-aside {
@@ -522,9 +543,25 @@ body {
   border: 2px solid #fddcc4;
   transition: 0.4s;
 }
+.btn-aside__left {
+  position: absolute;
+  top: calc(100vw - 12px);
+  left: 58px;
+}
+.btn-aside__right {
+  position: absolute;
+  top: calc(100vw - 12px);
+  left: 190px;
+}
 
 @media (max-width: 992px) {
   .woody {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .jennifer {
     display: none;
   }
 }
@@ -536,6 +573,11 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+@media (max-width: 767px) {
+  .cards-items {
+    width: 90%;
+  }
+}
 .cards-items__item-element {
   width: 27.3%;
   transition: 0.4s;
@@ -545,6 +587,11 @@ body {
 @media (max-width: 992px) {
   .cards-items__item-element {
     width: 46.2%;
+  }
+}
+@media (max-width: 767px) {
+  .cards-items__item-element {
+    width: 100%;
   }
 }
 .cards-items__item-element:hover {
