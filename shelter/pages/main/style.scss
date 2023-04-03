@@ -303,6 +303,9 @@ body {
 
   &__main-discribe-padding {
     padding-top: 16.3rem;
+    @media (min-width: 993px) and (max-width: 1020px) {
+      padding-top: 12.3rem;
+    }
     @include media-tablet {
       padding-top: 0rem;
     }
