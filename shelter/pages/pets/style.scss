@@ -152,8 +152,7 @@ body {
   align-items: center;
   @include media-mobile {
     justify-content: flex-start;
-    // gap: 4rem;
-    gap: calc(4rem - (450 - 5.2) * (100vw - 320px) / (320 - 767))
+    gap: calc(4rem - (450 - 5.2) * (100vw - 320px) / (320 - 767));
   }
 }
 .logo {
@@ -188,16 +187,13 @@ body {
 }
 
 .navigation {
-
   @include media-laptop-menu {
-    // width: 62.7%;
     width: 37%;
   }
   @include media-container-width {
     width: calc(53% + (53 - 37) * (100vw - 993px) / (1200 - 993));
   }
   @include media-tablet-menu {
-    // width: 37%;
     width: 62.7%;
   }
   @include media-mobile() {
@@ -209,7 +205,6 @@ body {
     @include media-laptop-menu {
       @include flex-container();
       align-items: center;
-      // max-width: 44.3rem;
       width: 100%;
     }
     @include media-tablet-menu {
@@ -253,10 +248,6 @@ body {
     transition: 0.3s;
     cursor: pointer;
   }
-
-  // &_hover:hover::after {
-  //   width: 100%;
-  // }
 
   &_hover-link:hover {
     color: $color-main-btn-text;
@@ -366,7 +357,6 @@ body {
     display: none;
   }
 }
-
 
 .cards-items {
   @include flex-container(row, center);
@@ -619,11 +609,9 @@ body {
   width: 100%;
   margin-top: 4rem;
   @include media-tablet {
-    // width: 100%;
     margin-top: 6.4rem;
   }
   @include media-mobile {
-    // width: 100%;
     margin-top: 3.9rem;
   }
 }
