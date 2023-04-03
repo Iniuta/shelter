@@ -5,6 +5,7 @@ $color-middle-grey: #b2b2b2;
 $color-light-grey: #cdcdcd;
 $color-pink-btn: #f1cdb3;
 $color-main-btn-text: #292929;
+$color-black: #000000;
 $color-cards-background: #fafafa;
 $color-text-about: #4c4c4c;
 $color-hover: #fddcc4;
@@ -76,6 +77,11 @@ $mobile-width-768: 768px;
 }
 @mixin media-laptop-menu {
   @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+@mixin media-container-width {
+  @media (max-width: $width-container) {
     @content;
   }
 }
@@ -158,7 +164,8 @@ body {
   align-items: center;
   @include media-mobile {
     justify-content: flex-start;
-    gap: 4rem;
+    // gap: 4rem;
+    gap: calc(4rem - (450 - 5.2) * (100vw - 320px) / (320 - 767));
   }
 }
 
@@ -198,6 +205,9 @@ body {
     // width: 62.7%;
     width: 37%;
   }
+  @include media-container-width {
+    width: calc(53% + (53 - 37) * (100vw - 993px) / (1200 - 993));
+  }
   @include media-tablet-menu {
     // width: 37%;
     width: 62.7%;
@@ -212,7 +222,8 @@ body {
     @include media-laptop-menu {
       @include flex-container();
       align-items: center;
-      max-width: 44.3rem;
+      // max-width: 44.3rem;
+      width: 100%;
     }
     @include media-tablet-menu {
       @include flex-container();
@@ -436,7 +447,7 @@ body {
       width: 37%;
     }
     @include media-mobile {
-      width: 86.7%;
+      width: calc(86.7% + (-358.3) * (100vw - 320px) / (767 - 320));
     }
   }
 }
@@ -493,16 +504,25 @@ body {
     margin-top: 1.4rem;
   }
 }
+.img-puppi-cat-container {
+  max-width: 25%;
+  @include media-container-width {
+    max-width: calc(42% + (25 - 42) * (100vw - 768px) / (1280 - 768));
+  }
+  @include media-mobile() {
+    max-width: calc(86% + (42 - 86) * (100vw - 320px) / (768 - 320));
+  }
+}
 .img-puppi-cat {
-  width: 25%;
-  height: 25%;
+  width: 100%;
+  // height: 25%;
   @include media-tablet {
-    width: 42%;
-    height: 42%;
+    // width: 42%;
+    // height: 42%;
   }
   @include media-mobile {
-    width: 86%;
-    height: 86%;
+    // width: 86%;
+    // height: 86%;
   }
 }
 
@@ -583,15 +603,17 @@ body {
   &__left {
     @include media-mobile {
       position: absolute;
-      top: calc(100vw - 12px);
-      left: 58px;
+      // top: calc(100vw - 12px);
+      top: calc(30.8rem + 110 * (100vw - 320px) / (768 - 320));
+      // left: 58px;
+      left: calc(5.8rem + 200 * (100vw - 320px) / (768 - 320));;
     }
   }
   &__right {
     @include media-mobile {
       position: absolute;
-      top: calc(100vw - 12px);
-      left: 190px;
+      top: calc(30.8rem + 110 * (100vw - 320px) / (768 - 320));
+      left: calc(19rem + 240 * (100vw - 320px) / (768 - 320));;
     }
   }
 }
@@ -613,7 +635,9 @@ body {
   @include flex-container();
   flex-wrap: wrap;
   @include media-mobile {
-    width: 90%;
+    justify-content: center;
+    row-gap: 3.2rem;
+    width: calc(100% + -320 * (100vw - 320px) / 447);
   }
 
   // .cards-items__item-element
@@ -626,7 +650,7 @@ body {
       width: 46.2%;
     }
     @include media-mobile {
-      width: 100%;
+      width: 90%;
     }
     cursor: pointer;
     &:hover {
@@ -821,7 +845,7 @@ body {
   &__donation-padding {
     padding: $in-addition-paddings;
     @include media-tablet {
-      padding: 8rem 9.2rem 8.9rem 9.3rem;
+      padding: 8rem 9.2rem 9rem 9.3rem;
     }
     @include media-mobile {
       padding: 4.2rem 0rem;
@@ -854,7 +878,11 @@ body {
 }
 .donation-info {
   width: 41.5%;
+  // width: calc(100% + (-534.5) * (100vw - 993px) / (1280 - 993));
   @include flex-container(column, space-between);
+  @include media-container-width {
+    width: calc(100% + (-534.5) * (100vw - 993px) / (1280 - 993));
+  }
   @include media-tablet {
     width: 73%;
     row-gap: 1.9rem;
@@ -928,6 +956,9 @@ body {
 .wrap-footer-items {
   display: flex;
   gap: 16rem;
+  @include media-container-width {
+    gap: calc(6rem + (16 - 6) * (100vw - 993px) / (1280 - 993));
+  }
   @include media-tablet {
     padding: 0 3.4rem;
     gap: 6rem;
@@ -1005,18 +1036,42 @@ body {
     color: $color-pink-btn;
   }
 }
+
+.footer-img-container {
+  display: flex;
+  justify-content: flex-end;
+  @include media-container-width {
+    max-width: calc(43% + (25 - 43) * (100vw - 768px) / (1280 - 768));
+  }
+  @include media-mobile {
+    max-width: calc(86.5% + (43 - 87) * (100vw - 320px) / (767 - 320));
+  }
+}
+
 .img-footer-puppi {
-  width: 25%;
+  width: 100%;
   margin-top: 4rem;
   @include media-tablet {
-    width: 42%;
+    // width: 100%;
     margin-top: 6.4rem;
   }
   @include media-mobile {
-    width: 87%;
+    // width: 100%;
     margin-top: 3.9rem;
   }
 }
+// .img-footer-puppi {
+//   width: 25%;
+//   margin-top: 4rem;
+//   @include media-tablet {
+//     width: 42%;
+//     margin-top: 6.6rem;
+//   }
+//   @include media-mobile {
+//     width: 87%;
+//     margin-top: 3.9rem;
+//   }
+// }
 
 // HAMBURGER-MENU
 
