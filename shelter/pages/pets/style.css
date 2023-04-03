@@ -63,7 +63,7 @@ body {
 @media (max-width: 767px) {
   .menu {
     justify-content: flex-start;
-    gap: 4rem;
+    gap: calc(4rem - 444.8 * (100vw - 320px) / -447);
   }
 }
 
@@ -112,6 +112,11 @@ body {
     width: 37%;
   }
 }
+@media (max-width: 1200px) {
+  .navigation {
+    width: calc(53% + 16 * (100vw - 993px) / 207);
+  }
+}
 @media (min-width: 768px) and (max-width: 992px) {
   .navigation {
     width: 62.7%;
@@ -128,7 +133,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 44.3rem;
+    width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
@@ -188,7 +193,7 @@ body {
   background: #f6f6f6;
 }
 .our-friends-section__friends-padding {
-  padding: 8rem 0 10rem 0;
+  padding: 8rem 0 9.8rem 0;
 }
 @media (max-width: 992px) {
   .our-friends-section__friends-padding {
@@ -307,7 +312,9 @@ body {
 }
 @media (max-width: 767px) {
   .cards-items {
+    align-self: center;
     row-gap: 3.2rem;
+    width: calc(100% + -320 * (100vw - 320px) / 447);
   }
 }
 .cards-items__item-element {
@@ -442,6 +449,11 @@ body {
   align-items: center;
   margin: 0 auto;
 }
+@media (max-width: 1200px) {
+  .pagination {
+    width: calc(40% + -10 * (100vw - 993px) / 287);
+  }
+}
 @media (max-width: 992px) {
   .pagination {
     width: 51%;
@@ -449,7 +461,7 @@ body {
 }
 @media (max-width: 767px) {
   .pagination {
-    width: 100%;
+    width: calc(100% + -400 * (100vw - 320px) / 447);
   }
 }
 
@@ -462,6 +474,11 @@ body {
 .wrap-footer-items {
   display: flex;
   gap: 16rem;
+}
+@media (max-width: 1200px) {
+  .wrap-footer-items {
+    gap: calc(6rem + 10 * (100vw - 993px) / 287);
+  }
 }
 @media (max-width: 992px) {
   .wrap-footer-items {
@@ -539,19 +556,32 @@ body {
   color: #f1cdb3;
 }
 
+.footer-img-container {
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 1200px) {
+  .footer-img-container {
+    max-width: calc(43% + -18 * (100vw - 768px) / 512);
+  }
+}
+@media (max-width: 767px) {
+  .footer-img-container {
+    max-width: calc(86.5% + -44 * (100vw - 320px) / 447);
+  }
+}
+
 .img-footer-puppi {
-  width: 25%;
+  width: 100%;
   margin-top: 4rem;
 }
 @media (max-width: 992px) {
   .img-footer-puppi {
-    width: 42%;
     margin-top: 6.4rem;
   }
 }
 @media (max-width: 767px) {
   .img-footer-puppi {
-    width: 87%;
     margin-top: 3.9rem;
   }
 }

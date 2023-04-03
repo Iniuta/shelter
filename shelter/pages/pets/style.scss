@@ -9,7 +9,7 @@ $color-black: #000000;
 $color-cards-background: #fafafa;
 $color-text-about: #4c4c4c;
 $color-hover: #fddcc4;
-$sections-paddings: 8rem 0 10rem 0;
+$sections-paddings: 8rem 0 9.8rem 0;
 $in-addition-paddings: 8rem 14.2rem 10rem 14.3rem;
 $wrapper-padding: 0 4rem;
 $width-container: 1200px;
@@ -80,6 +80,11 @@ $mobile-width-768: 768px;
     @content;
   }
 }
+@mixin media-container-width {
+  @media (max-width: $width-container) {
+    @content;
+  }
+}
 @mixin media-tablet-menu {
   @media (min-width: $mobile-width-768) and (max-width: $tablet-width) {
     @content;
@@ -147,7 +152,8 @@ body {
   align-items: center;
   @include media-mobile {
     justify-content: flex-start;
-    gap: 4rem;
+    // gap: 4rem;
+    gap: calc(4rem - (450 - 5.2) * (100vw - 320px) / (320 - 767))
   }
 }
 .logo {
@@ -182,9 +188,13 @@ body {
 }
 
 .navigation {
+
   @include media-laptop-menu {
     // width: 62.7%;
     width: 37%;
+  }
+  @include media-container-width {
+    width: calc(53% + (53 - 37) * (100vw - 993px) / (1200 - 993));
   }
   @include media-tablet-menu {
     // width: 37%;
@@ -199,7 +209,8 @@ body {
     @include media-laptop-menu {
       @include flex-container();
       align-items: center;
-      max-width: 44.3rem;
+      // max-width: 44.3rem;
+      width: 100%;
     }
     @include media-tablet-menu {
       @include flex-container();
@@ -364,7 +375,9 @@ body {
   row-gap: 3.1rem;
   column-gap: 4rem;
   @include media-mobile {
+    align-self: center;
     row-gap: 3.2rem;
+    width: calc(100% + -320 * (100vw - 320px) / 447);
   }
 
   // .cards-items__item-element
@@ -501,11 +514,14 @@ body {
   @include flex-container(row, space-between);
   align-items: center;
   margin: 0 auto;
+  @include media-container-width {
+    width: calc(40% + (30 - 40) * (100vw - 993px) / (1280 - 993));
+  }
   @include media-tablet {
     width: 51%;
   }
   @include media-mobile {
-    width: 100%;
+    width: calc(100% + (-400) * (100vw - 320px) / (767 - 320));
   }
 }
 .footer {
@@ -517,6 +533,9 @@ body {
 .wrap-footer-items {
   display: flex;
   gap: 16rem;
+  @include media-container-width {
+    gap: calc(6rem + (16 - 6) * (100vw - 993px) / (1280 - 993));
+  }
   @include media-tablet {
     padding: 0 3.4rem;
     gap: 6rem;
@@ -584,15 +603,27 @@ body {
     color: $color-pink-btn;
   }
 }
+
+.footer-img-container {
+  display: flex;
+  justify-content: flex-end;
+  @include media-container-width {
+    max-width: calc(43% + (25 - 43) * (100vw - 768px) / (1280 - 768));
+  }
+  @include media-mobile {
+    max-width: calc(86.5% + (43 - 87) * (100vw - 320px) / (767 - 320));
+  }
+}
+
 .img-footer-puppi {
-  width: 25%;
+  width: 100%;
   margin-top: 4rem;
   @include media-tablet {
-    width: 42%;
+    // width: 100%;
     margin-top: 6.4rem;
   }
   @include media-mobile {
-    width: 87%;
+    // width: 100%;
     margin-top: 3.9rem;
   }
 }
