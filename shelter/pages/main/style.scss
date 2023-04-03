@@ -85,6 +85,11 @@ $mobile-width-768: 768px;
     @content;
   }
 }
+@mixin media-donation-info {
+  @media (max-width: 1220px) {
+    @content;
+  }
+}
 @mixin media-tablet-menu {
   @media (min-width: $mobile-width-768) and (max-width: $tablet-width) {
     @content;
@@ -860,8 +865,9 @@ body {
 .donation-info {
   width: 41.5%;
   @include flex-container(column, space-between);
-  @include media-container-width {
+  @include media-donation-info {
     width: calc(100% + (-534.5) * (100vw - 993px) / (1280 - 993));
+    gap: 1.5rem;
   }
   @include media-tablet {
     width: 73%;
