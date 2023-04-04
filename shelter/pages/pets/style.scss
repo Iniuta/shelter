@@ -152,7 +152,8 @@ body {
   align-items: center;
   @include media-mobile {
     justify-content: flex-start;
-    gap: calc(4rem - (450 - 5.2) * (100vw - 320px) / (320 - 767));
+    gap: calc(6.4rem - 444.8 * (100vw - 320px) / -447);
+    padding-left: 1rem;
   }
 }
 .logo {
