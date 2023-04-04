@@ -134,7 +134,7 @@ body {
 }
 
 .header {
-  padding-top: 6rem;
+  padding-top: 3rem;
   @include media-tablet {
     padding-top: calc(3rem + (6 - 3) * ((100vw - 320px) / (1280 - 320)));
   }
@@ -169,7 +169,8 @@ body {
   align-items: center;
   @include media-mobile {
     justify-content: flex-start;
-    gap: calc(4rem - (450 - 5.2) * (100vw - 320px) / (320 - 767));
+    gap: calc(6.4rem - 444.8 * (100vw - 320px) / -447);
+    padding-left: 1rem;
   }
 }
 
@@ -285,7 +286,10 @@ body {
   }
 }
 .not-only {
-  padding-top: 6rem;
+  padding-top: 9rem;
+  @include media-tablet {
+    padding-top: 6rem;
+  }
 
   // .not-only__items-padding
 

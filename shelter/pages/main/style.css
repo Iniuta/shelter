@@ -33,7 +33,7 @@ body {
 }
 
 .header {
-  padding-top: 6rem;
+  padding-top: 3rem;
 }
 @media (max-width: 992px) {
   .header {
@@ -78,7 +78,8 @@ body {
 @media (max-width: 767px) {
   .menu {
     justify-content: flex-start;
-    gap: calc(4rem - 444.8 * (100vw - 320px) / -447);
+    gap: calc(6.4rem - 444.8 * (100vw - 320px) / -447);
+    padding-left: 1rem;
   }
 }
 
@@ -211,7 +212,12 @@ body {
 }
 
 .not-only {
-  padding-top: 6rem;
+  padding-top: 9rem;
+}
+@media (max-width: 992px) {
+  .not-only {
+    padding-top: 6rem;
+  }
 }
 .items {
   display: flex;
