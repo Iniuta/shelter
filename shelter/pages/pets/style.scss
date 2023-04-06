@@ -119,6 +119,10 @@ html {
   overflow-x: hidden;
 }
 
+.body__active{
+  overflow: hidden;
+}
+
 body {
   overflow: scroll;
   overflow-x: hidden;
@@ -187,11 +191,11 @@ body {
   display: none;
 }
 
-.hamburger-wrap {
-  @include media-mobile() {
-    display: none;
-  }
-}
+// .hamburger-wrap {
+//   @include media-mobile() {
+//     display: none;
+//   }
+// }
 
 .navigation {
   @include media-laptop-menu {
@@ -633,7 +637,7 @@ body {
     width: 30px;
     height: 22px;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.5s;
     &::before {
       content: "";
       left: 0;
@@ -641,7 +645,6 @@ body {
       position: absolute;
       height: 10%;
       width: 100%;
-      transition: 0.4s;
       background-color: $color-pink-btn;
     }
     &::after {
@@ -651,7 +654,6 @@ body {
       position: absolute;
       height: 10%;
       width: 100%;
-      transition: 0.4s;
       background-color: $color-pink-btn;
     }
     //add hamburger__active with onclick
@@ -666,7 +668,6 @@ body {
       position: absolute;
       height: 10%;
       width: 100%;
-      transition: 0.4s;
       background-color: $color-pink-btn;
       top: 50%;
       // transform: scale(1) translate(0px, -50%);
@@ -674,28 +675,31 @@ body {
   }
   //add hamburger-wrap with onclick
   .hamburger-wrap {
-    display: none;
+    visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(41, 41, 41, 0.6);
-    transition: right 4s;
+    // transition: 0.5s;
     &__active {
-      display: block;
+      visibility: visible;
+      transition: 0.1s;
+      z-index: 4;
     }
   }
   .navigation {
     display: block;
     position: fixed;
+    z-index: 4;
     top: 0;
     right: -100%;
     width: 32rem;
     height: 100vh;
     padding: 3rem 0rem;
     background: $color-main-btn-text;
-    transition: right 2s;
+    transition: right 1s;
     //add navigation__active with onclick
     // .navigation__active
 

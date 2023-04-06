@@ -24,6 +24,10 @@ html {
   overflow-x: hidden;
 }
 
+.body__active {
+  overflow: hidden;
+}
+
 body {
   overflow: scroll;
   overflow-x: hidden;
@@ -106,12 +110,6 @@ body {
 
 .hamburger {
   display: none;
-}
-
-@media (max-width: 767px) {
-  .hamburger-wrap {
-    display: none;
-  }
 }
 
 @media (min-width: 992px) {
@@ -601,7 +599,7 @@ body {
     width: 30px;
     height: 22px;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.5s;
   }
   .hamburger::before {
     content: "";
@@ -610,7 +608,6 @@ body {
     position: absolute;
     height: 10%;
     width: 100%;
-    transition: 0.4s;
     background-color: #f1cdb3;
   }
   .hamburger::after {
@@ -620,7 +617,6 @@ body {
     position: absolute;
     height: 10%;
     width: 100%;
-    transition: 0.4s;
     background-color: #f1cdb3;
   }
   .hamburger__active {
@@ -631,33 +627,34 @@ body {
     position: absolute;
     height: 10%;
     width: 100%;
-    transition: 0.4s;
     background-color: #f1cdb3;
     top: 50%;
   }
   .hamburger-wrap {
-    display: none;
+    visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(41, 41, 41, 0.6);
-    transition: right 4s;
   }
   .hamburger-wrap__active {
-    display: block;
+    visibility: visible;
+    transition: 0.1s;
+    z-index: 4;
   }
   .navigation {
     display: block;
     position: fixed;
+    z-index: 4;
     top: 0;
     right: -100%;
     width: 32rem;
     height: 100vh;
     padding: 3rem 0rem;
     background: #292929;
-    transition: right 2s;
+    transition: right 1s;
   }
   .navigation__active {
     right: 0;
