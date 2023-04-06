@@ -701,6 +701,7 @@ body {
 
     &__list-item {
       @include font-Arial(3.2rem);
+      color: $color-light-grey;
     }
   }
   .list-item {
@@ -708,8 +709,9 @@ body {
     // .list-item_active
 
     &_active {
+      color: $color-cards-background;
       &::after {
-        width: 24.4rem;
+        width: 12.4rem;
       }
     }
 

@@ -667,9 +667,13 @@ body {
     font-weight: 400;
     font-size: 3.2rem;
     line-height: 160%;
+    color: #cdcdcd;
+  }
+  .list-item_active {
+    color: #fafafa;
   }
   .list-item_active::after {
-    width: 24.4rem;
+    width: 12.4rem;
   }
 }
 
