@@ -633,6 +633,7 @@ body {
     width: 30px;
     height: 22px;
     cursor: pointer;
+    transition: 0.4s;
     &::before {
       content: "";
       left: 0;
@@ -653,8 +654,13 @@ body {
       transition: 0.4s;
       background-color: $color-pink-btn;
     }
+    //add hamburger__active with onclick
+    // .hamburger__active
+
+    &__active {
+      transform: rotate(90deg);
+}
     // .hamburger__line
-    
     &__line {
       left: 0;
       position: absolute;
@@ -663,11 +669,12 @@ body {
       transition: 0.4s;
       background-color: $color-pink-btn;
       top: 50%;
-      transform: scale(1) translate(0px, -50%);
+      // transform: scale(1) translate(0px, -50%);
     }
   }
+  //add hamburger-wrap with onclick
   .hamburger-wrap {
-    display: block;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -675,19 +682,27 @@ body {
     height: 100%;
     background: rgba(41, 41, 41, 0.6);
     transition: right 4s;
+    &__active {
+      display: block;
+    }
   }
   .navigation {
     display: block;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 32rem;
     height: 100vh;
     padding: 3rem 0rem;
     background: $color-main-btn-text;
-    transition: right 4s;
-    // .navigation__list
+    transition: right 2s;
+    //add navigation__active with onclick
+    // .navigation__active
 
+    &__active {
+      right: 0;
+}
+// .navigation__list
     &__list {
      display: flex;
      flex-direction: column;
@@ -711,7 +726,7 @@ body {
     &_active {
       color: $color-cards-background;
       &::after {
-        width: 12.4rem;
+        width: 24.4rem;
       }
     }
 
