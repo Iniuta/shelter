@@ -1096,27 +1096,33 @@ body {
     height: 22px;
     cursor: pointer;
   }
-  .hamburger .hamburger__line,
-  .hamburger::before,
-  .hamburger::after {
+  .hamburger::before {
+    content: "";
     left: 0;
+    top: 0;
     position: absolute;
     height: 10%;
     width: 100%;
     transition: 0.4s;
     background-color: #f1cdb3;
   }
-  .hamburger::before,
   .hamburger::after {
     content: "";
-  }
-  .hamburger::before {
-    top: 0;
-  }
-  .hamburger::after {
+    left: 0;
     bottom: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: 0.4s;
+    background-color: #f1cdb3;
   }
-  .hamburger .hamburger__line {
+  .hamburger__line {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: 0.4s;
+    background-color: #f1cdb3;
     top: 50%;
     transform: scale(1) translate(0px, -50%);
   }

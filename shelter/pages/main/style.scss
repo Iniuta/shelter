@@ -1062,32 +1062,64 @@ body {
     width: 30px;
     height: 22px;
     cursor: pointer;
+    &::before {
+      content: "";
+      left: 0;
+      top: 0;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      transition: 0.4s;
+      background-color: $color-pink-btn;
+    }
+    &::after {
+      content: "";
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      transition: 0.4s;
+      background-color: $color-pink-btn;
+    }
+    // .hamburger__line
+    
+    &__line {
+      left: 0;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      transition: 0.4s;
+      background-color: $color-pink-btn;
+      top: 50%;
+      transform: scale(1) translate(0px, -50%);
+    }
   }
+  .navigation {
+    // .navigation__list
 
-  .hamburger .hamburger__line,
-  .hamburger::before,
-  .hamburger::after {
-    left: 0;
-    position: absolute;
-    height: 10%;
-    width: 100%;
-    transition: 0.4s;
-    background-color: $color-pink-btn;
-  }
+    &__list {
+    }
 
-  .hamburger::before,
-  .hamburger::after {
-    content: "";
-  }
+    // .navigation__list-item
 
-  .hamburger::before {
-    top: 0;
+    &__list-item {
+    }
   }
-  .hamburger::after {
-    bottom: 0;
-  }
-  .hamburger .hamburger__line {
-    top: 50%;
-    transform: scale(1) translate(0px, -50%);
+  .list-item {
+    // .list-item_active
+
+    &_active {
+    }
+
+    // .list-item_hover
+
+    &_hover {
+    }
+
+    // .list-item_hover-link
+
+    &_hover-link {
+    }
   }
 }
