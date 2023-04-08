@@ -643,30 +643,44 @@ body {
   }
 }
 
-.sophia,
-.timmy,
-.charly,
-.scarlett,
-.freddie {
-  @include media-hidden-slider-img {
-    display: none;
-  }
-}
-
 .cards-items {
-  width: 82.5%;
-  @include flex-container();
-  flex-wrap: wrap;
+  // width: 82.5%;
+  // @include flex-container();
+  // flex-wrap: wrap;
+  width: 991px;
+  overflow: hidden;
   @include media-mobile {
     justify-content: center;
     row-gap: 3.2rem;
     width: calc(100% + -320 * (100vw - 320px) / 447);
   }
 
+  // cards-items__container
+
+  &__container {
+    width: 100%;
+    display: flex;
+    position: relative;
+    left: -991px;
+  }
+
+  // cards-items__cards-set
+
+  &__cards-set {
+    display: flex;
+    column-gap: 90px;
+    // flex-wrap: wrap;
+  }
+
   // .cards-items__item-element
 
   &__item-element {
-    width: 27.3%;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     transition: 0.4s;
     border-radius: 9px;
     @include media-tablet {
@@ -1282,7 +1296,7 @@ body {
     @include media-tablet() {
       left: 690px;
     }
-    @include media-mobile(){
+    @include media-mobile() {
       left: 260px;
     }
   }

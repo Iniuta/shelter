@@ -601,22 +601,9 @@ body {
   }
 }
 
-@media (min-width: 0px) {
-  .sophia,
-  .timmy,
-  .charly,
-  .scarlett,
-  .freddie {
-    display: none;
-  }
-}
-
 .cards-items {
-  width: 82.5%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  width: 991px;
+  overflow: hidden;
 }
 @media (max-width: 767px) {
   .cards-items {
@@ -625,8 +612,23 @@ body {
     width: calc(100% + -320 * (100vw - 320px) / 447);
   }
 }
+.cards-items__container {
+  width: 100%;
+  display: flex;
+  position: relative;
+  left: -991px;
+}
+.cards-items__cards-set {
+  display: flex;
+  column-gap: 90px;
+}
 .cards-items__item-element {
-  width: 27.3%;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
   transition: 0.4s;
   border-radius: 9px;
   cursor: pointer;
