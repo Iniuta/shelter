@@ -124,6 +124,10 @@ $zero-width: 0px;
   width: 0;
 }
 
+// * {
+//   box-sizing: border-box;
+// }
+
 html {
   font-size: 10px;
   scroll-behavior: smooth;
@@ -1029,17 +1033,7 @@ body {
     }
   }
 }
-.section-titles {
-  // .section-titles_space-letters
 
-  &_space-letters {
-  }
-
-  // .section-titles_footer-txt-color
-
-  &_footer-txt-color {
-  }
-}
 .items-links {
 }
 .link {
@@ -1196,7 +1190,7 @@ body {
   }
 }
 
-//---POPUP---
+// NEW POPUP STYLES
 .popup-wrap {
   position: fixed;
   top: 0;
@@ -1211,6 +1205,7 @@ body {
     visibility: visible;
   }
 }
+
 .popup {
   @include media-hidden-slider-img() {
     position: fixed;
@@ -1222,10 +1217,11 @@ body {
     opacity: 0;
     visibility: hidden;
   }
-   &__active {
-        opacity: 1;
-        visibility: visible;
-      }
+  &__active {
+    opacity: 1;
+    visibility: visible;
+  }
+
   // .popup__wrap
 
   &__wrap {
@@ -1242,17 +1238,18 @@ body {
 
   &__container {
     @include media-hidden-slider-img() {
-      min-width: 900px;
+      width: 900px;
       position: relative;
-      padding: 0 19rem;
+      // padding: 0 19rem;
       background-color: transparent;
     }
-    @include media-tablet(){
+    @include media-tablet() {
       min-width: 630px;
       padding: 0 6.9rem;
     }
-    @include media-tablet(){
+    @include media-mobile() {
       min-width: 240px;
+      padding: 0px 3.9rem;
     }
   }
 
@@ -1267,7 +1264,7 @@ body {
       box-sizing: border-box;
       width: 52px;
       height: 52px;
-      left: 1081px;
+      left: 893px;
       top: -53px;
       background: transparent;
       border: 2px solid $color-pink-btn;
@@ -1278,8 +1275,11 @@ body {
         transition: 0.4s;
       }
     }
-    @include media-tablet(){
+    @include media-tablet() {
       left: 690px;
+    }
+    @include media-mobile(){
+      left: 260px;
     }
   }
 
@@ -1291,15 +1291,19 @@ body {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      justify-content: space-between;
+      column-gap: 3.3rem;
       border-radius: 9px;
       background: $color-cards-background;
     }
     @include media-tablet() {
       width: 630px;
+      column-gap: 1.3rem;
     }
-    @include media-tablet() {
+    @include media-mobile() {
       width: 240px;
+      margin: auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
     }
   }
 
@@ -1309,7 +1313,7 @@ body {
     @include media-hidden-slider-img() {
       min-width: 55%;
     }
-    @include media-tablet(){
+    @include media-mobile() {
       display: none;
     }
   }
@@ -1342,69 +1346,93 @@ body {
       width: 100%;
       align-items: center;
     }
-  
-
+  }
   // .popup__info-container-padding
-
   &__info-container-padding {
     @include media-hidden-slider-img() {
-      padding-right: 2rem;
       padding-top: 5rem;
     }
     @include media-tablet() {
       padding-top: 1rem;
-      padding-right: 0.9rem;
+      padding-right: 0rem;
       font-size: 1.3rem;
     }
     @include media-mobile() {
       padding-top: 1rem;
-      padding-right: 0.9rem;
+      padding-right: 0rem;
       font-size: 1.3rem;
     }
   }
 
-  // .popup__subtitle
+  // .popup__title
 
-  &__subtitle {
-    font-size: 2rem;
+  &__title {
+    @include font-Georgia(3.5rem, 130%, 0);
+    color: $color-black;
+    letter-spacing: 0.2rem;
   }
 
- // .popup__discribe
+  // .popup__pet-discribe
+
+  &__pet-discribe {
+    @include font-Georgia(2rem, 115%);
+    text-align: center;
+    color: $color-black;
+  }
+
+  // .popup__pet
+
+  &__pet {
+  }
+
+  // .popup__discribe
 
   &__discribe {
     @include font-Georgia(1.5rem);
-    color: $color-dark-grey;
-    @include media-tablet(){
+    color: $color-black;
+    padding-top: 3rem;
+    @include media-tablet() {
+      padding-top: 1rem;
       font-size: 1.3rem;
     }
   }
 
-  // .popup__info-txt-padding
+  // .popup__about-pet
 
-  &__info-txt-padding {
-    @include media-hidden-slider-img() {
-      padding: 3rem 0rem;
-      color: $color-black;
-    }
-    @include media-tablet() {
-      margin-top: 1rem;
-      padding: 0rem;
-    }
+  &__about-pet {
   }
 
   // .popup__list
 
   &__list {
     @include media-hidden-slider-img() {
-      padding-left: 2rem;
+      padding-left: 1.5rem;
+      padding-top: 3rem;
       display: flex;
       flex-direction: column;
       row-gap: 1.3rem;
       list-style: disc;
     }
-    @include media-tablet(){
+    @include media-tablet() {
       padding-top: 1rem;
-      row-gap: 1rem;
+      row-gap: 0.5rem;
+    }
+    @include media-mobile() {
+      padding-left: 1.5rem;
+      padding-bottom: 1rem;
+      padding-top: 1.8rem;
+      align-self: flex-start;
+    }
+  }
+
+  // .popup__pet-info
+
+  &__pet-info {
+    @include font-Georgia(1.5rem);
+    color: $color-black;
+    letter-spacing: 0.1em;
+    &::marker {
+      color: $color-hover;
     }
   }
 
@@ -1412,47 +1440,9 @@ body {
 
   &__bold-txt {
   }
-  // .popup__pet-info
 
-  &__pet-info {
-    &::marker {
-      color: $color-hover;
-    }
-  }
-}
-.img-pet__active {
-  border-radius: 100px;
-}
-.section-titles {
-  // .section-titles_space-letters
+  // .popup__pet-age
 
-  &_space-letters {
+  &__pet-age {
   }
-
-  // .section-titles_popup
-
-  &_popup {
-    color: $color-black;
-    padding: 0;
-  }
-  @include media-tablet() {
-    font-size: 3.5rem;
-  }
-  @include media-mobile(){
-    // margin-top: 1rem;
-    font-size: 3.5rem;
-  }
-}
-.help-items {
-  // .help-items__discribe
-
-  &__discribe {
-  }
-}
-.donation-info {
-  // .donation-info__bank
-
-  &__bank {
-  }
-}
 }

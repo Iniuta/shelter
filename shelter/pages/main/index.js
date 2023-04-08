@@ -13,7 +13,7 @@ const btnRight = document.querySelector(".btn-aside__right");
 
 //popup
 const popupImg = document.querySelector(".popup__img");
-const popupTitle = document.querySelector(".section-titles_popup");
+const popupTitle = document.querySelector(".popup__title");
 const popupPet = document.querySelector(".popup__pet");
 const popupAboutPet = document.querySelector(".popup__about-pet");
 const popupPetAge = document.querySelector(".popup__pet-age");
