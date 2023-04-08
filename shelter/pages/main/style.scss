@@ -618,14 +618,14 @@ body {
   &__left {
     @include media-mobile {
       position: absolute;
-      top: calc(30.8rem + 110 * (100vw - 320px) / (768 - 320));
+      top: calc(30.8rem + 0 * (100vw - 320px) / (768 - 320));
       left: calc(5.8rem + 200 * (100vw - 320px) / (768 - 320));
     }
   }
   &__right {
     @include media-mobile {
       position: absolute;
-      top: calc(30.8rem + 110 * (100vw - 320px) / (768 - 320));
+      top: calc(30.8rem + 0 * (100vw - 320px) / (768 - 320));
       left: calc(19rem + 240 * (100vw - 320px) / (768 - 320));
     }
   }
@@ -649,6 +649,9 @@ body {
   // flex-wrap: wrap;
   width: 991px;
   overflow: hidden;
+  @include media-tablet() {
+    width: 604px;
+  }
   @include media-mobile {
     justify-content: center;
     row-gap: 3.2rem;
@@ -662,6 +665,9 @@ body {
     display: flex;
     position: relative;
     left: -991px;
+    @include media-tablet() {
+      left: -878px;
+    }
   }
 
   // cards-items__cards-set
@@ -669,7 +675,9 @@ body {
   &__cards-set {
     display: flex;
     column-gap: 90px;
-    // flex-wrap: wrap;
+    @include media-tablet() {
+      column-gap: 40px;
+    }
   }
 
   // .cards-items__item-element
@@ -684,10 +692,12 @@ body {
     transition: 0.4s;
     border-radius: 9px;
     @include media-tablet {
-      width: 46.2%;
+      // width: 46.2%;
+      width: 270px;
     }
     @include media-mobile {
-      width: 90%;
+      // width: 90%;
+      width: 270px;
     }
     cursor: pointer;
     &:hover {
