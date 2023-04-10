@@ -12,7 +12,7 @@ let cardsInfo = [
 let currentCards = [];
 let leftCards = [];
 let rightCards = [];
-const innitialCards = cardsInfo;
+const initialCards = cardsInfo;
 
 //hamburger-menu
 const hamburger = document.querySelector(".hamburger");
@@ -182,110 +182,58 @@ const cardsImage = document.querySelector(".img");
 const cardsName = document.querySelector(".cards-items__pets-name");
 const cardsContainer = document.querySelector(".cards-items__cards-set");
 
+const cardsContainerCenter = document.querySelector(".center");
+
 let currentMarginLeft = 0;
 let currentOffSetLeft = 0;
 let currentSize = getCardsSizeBasedOnScreen();
-const slideLeft = () => {
-  btnLeft.removeEventListener("click", slideLeft);
-  btnRight.removeEventListener("click", slideRight);
-  // carousel.classList.add("slide-left");
-  let firstVisibleElement = getVisibleElements()[0];
-  carousel.style.transition = "0s";
-  currentOffSetLeft -= getCardsOffsetBasedOnScreen();
-  carousel.style.left = currentOffSetLeft + "px";
+
+function generateLeft() {
   if (leftCards.length === 0) {
     let newCards = [...generateCards(rightCards)];
-    newCards.forEach((c) => {
-      cardsContainer.insertBefore(generateCard(c), firstVisibleElement);
-    });
-    rightCards = [...currentCards].reverse();
+    rightCards = [...currentCards];
     currentCards = [...newCards];
   } else {
-    leftCards.forEach((c) => {
-      cardsContainer.insertBefore(generateCard(c), firstVisibleElement);
-    });
     rightCards = [...currentCards];
     currentCards = [...leftCards];
     leftCards = [];
   }
-  currentMarginLeft += getCardsOffsetBasedOnScreen();
-  setTimeout(() => {
-    carousel.style.transition = "1s";
-    carousel.style.marginLeft = currentMarginLeft + "px";
-  }, 100);
-  setTimeout(() => {
-    btnLeft.addEventListener("click", slideLeft);
-    btnRight.addEventListener("click", slideRight);
-  }, 1000);
-};
+}
 
-const slideRight = () => {
+const slideLeft = () => {
   btnLeft.removeEventListener("click", slideLeft);
   btnRight.removeEventListener("click", slideRight);
-  if (rightCards.length === 0) {
-    // let visibleElements = getVisibleElements();
-    let newCards = [...generateCards(leftCards)];
-    newCards.forEach((c) => {
-      getVisibleElements()[getCardsSizeBasedOnScreen() - 1].after(
-        generateCard(c)
-      );
-    });
-    if (leftCards.length == 0) {
-      leftCards = [...currentCards];
-    } else {
-      leftCards = [...currentCards].reverse();
-    }
+  generateLeft();
+  let leftCards = currentCards.map((c) => generateCard(c));
+  setCardsLeft.innerHTML = "";
+  leftCards.forEach((c) => setCardsLeft.appendChild(c));
+  carousel.classList.add("slide-left");
+};
 
+function generateRight() {
+  if (rightCards.length === 0) {
+    let newCards = [...generateCards(leftCards)];
+    leftCards = [...currentCards];
     currentCards = [...newCards];
   } else {
-    rightCards.forEach((c) => {
-      getVisibleElements()[getCardsSizeBasedOnScreen() - 1].after(
-        generateCard(c)
-      );
-    });
     leftCards = [...currentCards];
     currentCards = [...rightCards];
     rightCards = [];
   }
-  currentMarginLeft -= getCardsOffsetBasedOnScreen();
-  carousel.style.marginLeft = currentMarginLeft + "px";
-  setTimeout(() => {
-    btnLeft.addEventListener("click", slideLeft);
-    btnRight.addEventListener("click", slideRight);
-  }, 1000);
+}
+
+const slideRight = () => {
+  btnLeft.removeEventListener("click", slideLeft);
+  btnRight.removeEventListener("click", slideRight);
+  generateRight();
+  let rightCards = currentCards.map((c) => generateCard(c));
+  setCardsRight.innerHTML = "";
+  rightCards.forEach((c) => setCardsRight.appendChild(c));
+  carousel.classList.add("slide-right");
 };
 
 btnLeft.addEventListener("click", slideLeft);
 btnRight.addEventListener("click", slideRight);
-
-function getVisibleElements() {
-  const container = document.querySelector(".our-friends-section");
-  const elements = document.querySelectorAll(".cards-items__item-element");
-
-  const leftBoundary = container.getBoundingClientRect().left;
-  const rightBoundary = container.getBoundingClientRect().right;
-
-  const visibleElementsBetweenBoundaries = [];
-
-  for (let i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    const rect = element.getBoundingClientRect();
-
-    if (
-      rect.left >=
-        (leftBoundary + window.innerWidth > 1500
-          ? window.innerWidth / 10
-          : 0) &&
-      rect.right <= rightBoundary &&
-      rect.top >= 0 &&
-      rect.bottom <= window.innerHeight
-    ) {
-      // The element is between the boundaries and visible
-      visibleElementsBetweenBoundaries.push(element);
-    }
-  }
-  return visibleElementsBetweenBoundaries;
-}
 
 function generateCards(currentCards = []) {
   return generateRandomCards(getCardsSizeBasedOnScreen(), currentCards);
@@ -294,7 +242,11 @@ function generateCards(currentCards = []) {
 function generateCardsOnLoadAndResize() {
   let newCards = generateCards(currentCards);
   newCards.forEach((c) => {
-    cardsContainer.appendChild(generateCard(c));
+    cardsContainerCenter.appendChild(generateCard(c));
+  });
+
+  newCards.forEach((c) => {
+    setCardsLeft.appendChild(generateCard(c));
   });
   currentCards = newCards;
 }
@@ -325,21 +277,16 @@ function generateCard(cardInfo) {
 
 generateCardsOnLoadAndResize();
 
-// let currentSize = window.screen.width;
 window.addEventListener("resize", () => {
   if (currentSize == getCardsSizeBasedOnScreen()) return;
   currentSize = getCardsSizeBasedOnScreen();
-  currentMarginLeft = 0;
-  currentOffSetLeft = 0;
-  carousel.style.marginLeft = "0px";
-  carousel.style.left = "0px";
-  cardsContainer.innerHTML = "";
   carousel.style.transition = "0s";
+  cardsContainerCenter.innerHTML = "";
+  setCardsLeft.innerHTML = "";
   leftCards = [];
   rightCards = [];
-  cardsInfo = innitialCards;
+  cardsInfo = initialCards;
   generateCardsOnLoadAndResize();
-  carousel.style.transition = "1s";
 });
 
 function generateRandomCards(cardsNumber, usedElement) {
@@ -370,7 +317,7 @@ function generateRandomCards(cardsNumber, usedElement) {
 
 function getCardsSizeBasedOnScreen() {
   const screenWidth = window.innerWidth;
-  if (screenWidth >= 1280) {
+  if (screenWidth >= 1000) {
     return 3;
   } else if (screenWidth >= 768) {
     return 2;
@@ -379,28 +326,27 @@ function getCardsSizeBasedOnScreen() {
   }
 }
 
-function getCardsOffsetBasedOnScreen() {
+function getPageBaseOnScreenSize() {
   const screenWidth = window.innerWidth;
-  if (screenWidth >= 1280) {
-    return 1080;
+  if (screenWidth >= 993) {
+    return 0;
   } else if (screenWidth >= 768) {
-    return 610;
+    return 1;
   } else {
-    return 310;
+    return 2;
   }
 }
-
-// carousel.addEventListener("animationend", (animation) => {
-//   if (animation.animationName === "to-left") {
-//     cardsImage.innerHTML = "";
-//     cardsName.innerHTML = "";
-//     cardsImage.innerHTML = "<img src='../../assets/images/jennifer.png'>";
-//     cardsName.innerHTML = "Jennifer";
-//     carousel.classList.remove("slide-left");
-//   } else if (animation.animationName === "to-right") {
-//     carousel.classList.remove("slide-right");
-//   }
-
-//   btnLeft.addEventListener("click", slideLeft);
-//   btnRight.addEventListener("click", slideRight);
-// });
+carousel.addEventListener("animationend", (animation) => {
+  let changeItem;
+  if (animation.animationName === "to-left") {
+    carousel.classList.remove("slide-left");
+    changeItem = setCardsLeft;
+  } else if (animation.animationName === "to-right") {
+    carousel.classList.remove("slide-right");
+    changeItem = setCardsRight;
+  }
+  cardsContainerCenter.innerHTML = changeItem.innerHTML;
+  cardsContainerCenter.childNodes.forEach((e) => addPopup(e));
+  btnLeft.addEventListener("click", slideLeft);
+  btnRight.addEventListener("click", slideRight);
+});

@@ -609,11 +609,6 @@ body {
     left: -1982px;
   }
 }
-.slide-right {
-  animation-name: to-right;
-  animation-duration: 2s;
-}
-
 @keyframes to-left {
   from {
     left: -991px;
@@ -622,6 +617,47 @@ body {
     left: 0px;
   }
 }
+@media (max-width: 992px) {
+  @keyframes to-right {
+    from {
+      left: -585px;
+    }
+    to {
+      left: -1170px;
+    }
+  }
+  @keyframes to-left {
+    from {
+      left: -585px;
+    }
+    to {
+      left: 55px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  @keyframes to-right {
+    from {
+      left: -275px;
+    }
+    to {
+      left: -550px;
+    }
+  }
+  @keyframes to-left {
+    from {
+      left: -320px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+}
+.slide-right {
+  animation-name: to-right;
+  animation-duration: 2s;
+}
+
 .slide-left {
   animation-name: to-left;
   animation-duration: 2s;
@@ -647,11 +683,18 @@ body {
   width: 100%;
   display: flex;
   position: relative;
+  left: -991px;
   transition: 1s;
 }
 @media (max-width: 992px) {
   .cards-items__container {
-    left: 15px;
+    left: -585px;
+    column-gap: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .cards-items__container {
+    left: -275px;
   }
 }
 .cards-items__cards-set {
