@@ -276,36 +276,6 @@ body {
   }
 }
 
-@media (max-width: 992px) {
-  .scarlett {
-    display: none;
-  }
-}
-
-@media (max-width: 992px) {
-  .freddie {
-    display: none;
-  }
-}
-
-@media (max-width: 767px) {
-  .sophia {
-    display: none;
-  }
-}
-
-@media (max-width: 767px) {
-  .timmy {
-    display: none;
-  }
-}
-
-@media (max-width: 767px) {
-  .charly {
-    display: none;
-  }
-}
-
 .cards-items {
   display: flex;
   flex-direction: row;
@@ -691,10 +661,12 @@ body {
   background-color: rgba(41, 41, 41, 0.6);
   opacity: 0;
   visibility: hidden;
+  transition: 0.5s;
 }
 .popup-wrap__active {
   opacity: 1;
   visibility: visible;
+  transition: 0.5s;
 }
 
 @media (min-width: 0px) {
@@ -706,11 +678,13 @@ body {
     left: 0;
     opacity: 0;
     visibility: hidden;
+    transition: 0.5s;
   }
 }
 .popup__active {
   opacity: 1;
   visibility: visible;
+  transition: 0.5s;
 }
 @media (min-width: 0px) {
   .popup__wrap {

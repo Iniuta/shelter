@@ -350,35 +350,35 @@ body {
   }
 }
 
-.scarlett {
-  @include media-tablet {
-    display: none;
-  }
-}
+// .scarlett {
+//   @include media-tablet {
+//     display: none;
+//   }
+// }
 
-.freddie {
-  @include media-tablet {
-    display: none;
-  }
-}
+// .freddie {
+//   @include media-tablet {
+//     display: none;
+//   }
+// }
 
-.sophia {
-  @include media-mobile() {
-    display: none;
-  }
-}
+// .sophia {
+//   @include media-mobile() {
+//     display: none;
+//   }
+// }
 
-.timmy {
-  @include media-mobile() {
-    display: none;
-  }
-}
+// .timmy {
+//   @include media-mobile() {
+//     display: none;
+//   }
+// }
 
-.charly {
-  @include media-mobile() {
-    display: none;
-  }
-}
+// .charly {
+//   @include media-mobile() {
+//     display: none;
+//   }
+// }
 
 .cards-items {
   @include flex-container(row, center);
@@ -767,9 +767,11 @@ body {
   background-color: rgba(41, 41, 41, 0.6);
   opacity: 0;
   visibility: hidden;
+  transition: 0.5s;
   &__active {
     opacity: 1;
     visibility: visible;
+    transition: 0.5s;
   }
 }
 
@@ -783,10 +785,12 @@ body {
     left: 0;
     opacity: 0;
     visibility: hidden;
+    transition: 0.5s;
   }
   &__active {
     opacity: 1;
     visibility: visible;
+    transition: 0.5s;
   }
 
   // .popup__wrap
