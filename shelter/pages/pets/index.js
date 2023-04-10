@@ -9,7 +9,6 @@ let cardsInfo = [
   { name: "freddie", src: "../../assets/images/freddie.png" },
 ];
 
-const initialCards = cardsInfo;
 const container = document.querySelector(".cards-items");
 const buttonCounter = document.querySelector("#button-counter");
 const nextPage = document.querySelector("#next-page");
@@ -227,57 +226,53 @@ function generatePaginationCards() {
   const pageSize3 = 3;
 
   const repeatCount = 6;
-
+  shuffle(cardsInfo, cardsInfo.length);
+  let initialCards = cardsInfo;
   let objects = [];
   for (let i = 0; i < repeatCount; i++) {
-    objects = objects.concat(
-      initialCards.map((card, index) => ({
-        id: i * initialCards.length + index + 1,
-        card,
-      }))
-    );
+    shuffle(initialCards, 4);
+    let random = Math.floor(Math.random() * 4);
+    if (random == 3) {
+      swipeCards(4, 7, 5, 6, initialCards);
+    } else if (random == 2) {
+      swipeCards(4, 6, 5, 3, initialCards);
+    } else {
+      swipeCards(4, 3, 6, 7, initialCards);
+    }
+
+    objects = objects.concat(initialCards);
   }
 
-  pages6 = [];
-  pages8 = [];
-  pages16 = [];
+  function swipeCards(i, j, z, x, initialCards) {
+    [initialCards[i], initialCards[j]] = [initialCards[j], initialCards[i]];
+    [initialCards[z], initialCards[x]] = [initialCards[x], initialCards[z]];
+  }
 
-  const pageSizeObjects6 = objects.slice(
-    0,
-    pageSize6 * Math.ceil(objects.length / pageSize6)
-  );
-  const pageSizeObjects8 = objects.slice(
-    0,
-    pageSize8 * Math.ceil(objects.length / pageSize8)
-  );
-  const pageSizeObjects3 = objects.slice(
-    0,
-    pageSize3 * Math.ceil(objects.length / pageSize3)
-  );
+  // for (let i = 0; i < objects.length; i = i + 8) {
+  //   shuffle(objects, i + 8, i);
+  // }
 
-  const pageSizePages6 = paginate(pageSizeObjects6, pageSize6);
-  const pageSizePages8 = paginate(pageSizeObjects8, pageSize8);
-  const pageSizePages16 = paginate(pageSizeObjects3, pageSize3);
+  const pageSizePages8 = paginate(objects, pageSize8);
+  const pageSizePages6 = paginate(objects, pageSize6);
+  const pageSizePages16 = paginate(objects, pageSize3);
 
   for (let i = 0; i < pageSizePages6.length; i++) {
     const page = pageSizePages6[i];
-    shuffle(page);
     pages6.push(page);
+  }
+
+  for (let i = 0; i < pageSizePages16.length; i++) {
+    const page = pageSizePages16[i];
+    pages3.push(page);
   }
   for (let i = 0; i < pageSizePages8.length; i++) {
     const page = pageSizePages8[i];
-    shuffle(page);
     pages8.push(page);
   }
-  for (let i = 0; i < pageSizePages16.length; i++) {
-    const page = pageSizePages16[i];
-    shuffle(page);
-    pages3.push(page);
-  }
 
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+  function shuffle(array, till, start = 0) {
+    for (let i = start; i < till; i++) {
+      const j = Math.floor(Math.random() * i);
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
@@ -303,7 +298,7 @@ function initPage() {
   // document.querySelectorAll(".cards-items__item-element").forEach((e, i) => {
   //   updateCard(e, page[i].card);
   // });
-  page.forEach((c) => container.appendChild(generateCard(c.card)));
+  page.forEach((c) => container.appendChild(generateCard(c)));
   prevPage.classList.add("main-button_disabled-left");
   firstPage.classList.add("main-button_disabled-left");
   nextPage.classList.remove("main-button_disabled-left");
@@ -317,7 +312,7 @@ function updateCard(element, card) {
   element.firstElementChild.alt = card.name;
   element.firstElementChild.nextElementSibling.firstElementChild.innerText =
     card.name.charAt(0).toUpperCase() + card.name.slice(1);
-  addPopup(element);
+  // addPopup(element);
 }
 
 initPage();
@@ -371,7 +366,7 @@ function getNextPage() {
   let page = pages[getPageBaseOnScreenSize()][currentPage];
   buttonCounter.innerHTML = currentPage + 1;
   document.querySelectorAll(".cards-items__item-element").forEach((e, i) => {
-    updateCard(e, page[i].card);
+    updateCard(e, page[i]);
   });
 
   if (pages[getPageBaseOnScreenSize()].length <= currentPage + 1) {
@@ -391,7 +386,7 @@ function getLastPage() {
     ];
   buttonCounter.innerHTML = pages[getPageBaseOnScreenSize()].length;
   document.querySelectorAll(".cards-items__item-element").forEach((e, i) => {
-    updateCard(e, page[i].card);
+    updateCard(e, page[i]);
   });
 }
 
@@ -403,7 +398,7 @@ function getFirstPage() {
   let page = pages[getPageBaseOnScreenSize()][0];
   buttonCounter.innerHTML = 1;
   document.querySelectorAll(".cards-items__item-element").forEach((e, i) => {
-    updateCard(e, page[i].card);
+    updateCard(e, page[i]);
   });
 }
 
@@ -418,7 +413,7 @@ function getPrevPage() {
   let page = pages[getPageBaseOnScreenSize()][currentPage - 2];
   buttonCounter.innerHTML = currentPage - 1;
   document.querySelectorAll(".cards-items__item-element").forEach((e, i) => {
-    updateCard(e, page[i].card);
+    updateCard(e, page[i]);
   });
 
   if (currentPage <= 2) {
