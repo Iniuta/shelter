@@ -741,18 +741,24 @@ body {
     &_active {
       color: $color-cards-background;
       &::after {
-        width: 24.4rem;
+        width: 12.4rem;
       }
     }
 
     // .list-item_hover
 
     &_hover {
+      &:hover {
+        color: $color-white;
+      }
     }
 
     // .list-item_hover-link
 
     &_hover-link {
+      &:hover {
+        color: $color-white;
+      }
     }
   }
 }

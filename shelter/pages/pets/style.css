@@ -649,7 +649,13 @@ body {
     color: #fafafa;
   }
   .list-item_active::after {
-    width: 24.4rem;
+    width: 12.4rem;
+  }
+  .list-item_hover:hover {
+    color: #ffffff;
+  }
+  .list-item_hover-link:hover {
+    color: #ffffff;
   }
 }
 .popup-wrap {
