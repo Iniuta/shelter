@@ -1,3 +1,19 @@
+let cardsInfo = [
+  { name: "sophia", src: "../../assets/images/sophia.png" },
+  { name: "timmy", src: "../../assets/images/timmy.png" },
+  { name: "charly", src: "../../assets/images/charly.png" },
+  { name: "katrine", src: "../../assets/images/pets-katrine.png" },
+  { name: "jennifer", src: "../../assets/images/jennifer.png" },
+  { name: "woody", src: "../../assets/images/woody.png" },
+  { name: "scarlett", src: "../../assets/images/scarlett.png" },
+  { name: "freddie", src: "../../assets/images/freddie.png" },
+];
+
+let currentCards = [];
+let leftCards = [];
+let rightCards = [];
+const innitialCards = cardsInfo;
+
 //hamburger-menu
 const hamburger = document.querySelector(".hamburger");
 const hamburgerWrap = document.querySelector(".hamburger-wrap");
@@ -6,10 +22,10 @@ const html = document.querySelector("html");
 const links = document.querySelectorAll(".navigation__list-item");
 
 //slider
-const sliderItems = document.querySelectorAll(".cards-items__item-element");
-const parentCards = document.querySelector(".cards-items");
-const btnLeft = document.querySelector(".btn-aside__left");
-const btnRight = document.querySelector(".btn-aside__right");
+// const sliderItems = document.querySelectorAll(".cards-items__item-element");
+// const parentCards = document.querySelector(".cards-items");
+// const btnLeft = document.querySelector(".btn-aside__left");
+// const btnRight = document.querySelector(".btn-aside__right");
 
 //popup
 const popupImg = document.querySelector(".popup__img");
@@ -22,6 +38,13 @@ const cardPet = document.querySelectorAll(".cards-items__item-element");
 const modalWindow = document.querySelector(".popup");
 const popupImgStyle = document.querySelector(".popup__img-pet");
 const popupContent = document.querySelector(".popup__content");
+
+// carousel
+const btnLeft = document.querySelector(".left-btn");
+const btnRight = document.querySelector(".right-btn");
+const carousel = document.querySelector(".carousel");
+const setCardsLeft = document.querySelector(".left");
+const setCardsRight = document.querySelector(".right");
 
 //-----------HAMBURGER-----------------
 
@@ -60,52 +83,13 @@ if (hamburgerWrap) {
   });
 }
 
-//---------SLIDER---------------
-const currentSlide = Array.from(sliderItems).slice(0, 3);
-let cards = [];
-// function slideImg() {
-//   for (let i = 0; i < currentSlide.length; i++) {
-//     if (parentCards.children[i].classList.contains("katrine")) {
-//       cards.push(
-//         (currentSlide.sort(function () {
-//           return Math.random() - 0.5;
-//         }).length = 5)
-//       );
-//     }
-//   }
-//   return cards;
-// }
-
-// function slideImg() {
-//   for (let i = 0; i < currentSlide.length; i++) {
-//     cards.push(
-//       (currentSlide.sort(function () {
-//         return Math.random() - 0.5;
-//       }).length = 3)
-//     );
-//   }
-//   return cards;
-// }
-
-// btnLeft.addEventListener("click", slideImg);
-// btnRight.addEventListener("click", slideImg);
-
 //---------POPUP---------------
 
-// const popupImg = document.querySelector(".popup__img");
-// const popupTitle = document.querySelector(".section-titles_popup");
-// const popupPet = document.querySelector(".popup__pet");
-// const popupAboutPet = document.querySelector(".popup__about-pet");
-// const popupPetAge = document.querySelector(".popup__pet-age");
-// const popupClose = document.querySelector(".popup__close");
-// const cardPet = document.querySelectorAll(".cards-items__item-element");
-// const modalWindow = document.querySelector(".popup");
-// const popupImgStyle = document.querySelector(".popup__img-pet");
-// const popupContent = document.querySelector(".popup__content");
 const popupWrap = document.querySelector(".popup-wrap");
 
 //open popup
-cardPet.forEach((element) => {
+
+function addPopup(element) {
   element.addEventListener("click", (event) => {
     // event.stopPropagation();
     if (element.classList.contains("sophia")) {
@@ -170,7 +154,7 @@ cardPet.forEach((element) => {
     html.classList.toggle("body__active");
     modalWindow.classList.toggle("popup__active");
   });
-});
+}
 
 //close popup with body click
 
@@ -186,28 +170,237 @@ modalWindow.addEventListener("click", function (event) {
   modalWindow.classList.remove("popup__active");
 });
 
-// document.addEventListener("click", (event) => {
-//   if (event.target !== popupClose && event.target !== popupContent) {
-//     html.classList.remove("body__active");
-//     popupWrap.classList.remove("popup-wrap__active");
-//     modalWindow.classList.remove("popup__active");
+//---------SLIDER---------------
+
+// const btnLeft = document.querySelector("#btn-left");
+// const btnRight = document.querySelector("#btn-right");
+// const carousel = document.querySelector("#carousel");
+// const setCardsLeft = document.querySelector("#left");
+// const setCardsRight = document.querySelector("#right");
+const cards = document.querySelector(".cards-items__item-element");
+const cardsImage = document.querySelector(".img");
+const cardsName = document.querySelector(".cards-items__pets-name");
+const cardsContainer = document.querySelector(".cards-items__cards-set");
+
+let currentMarginLeft = 0;
+let currentOffSetLeft = 0;
+let currentSize = getCardsSizeBasedOnScreen();
+const slideLeft = () => {
+  btnLeft.removeEventListener("click", slideLeft);
+  btnRight.removeEventListener("click", slideRight);
+  // carousel.classList.add("slide-left");
+  let firstVisibleElement = getVisibleElements()[0];
+  carousel.style.transition = "0s";
+  currentOffSetLeft -= getCardsOffsetBasedOnScreen();
+  carousel.style.left = currentOffSetLeft + "px";
+  if (leftCards.length === 0) {
+    let newCards = [...generateCards(rightCards)];
+    newCards.forEach((c) => {
+      cardsContainer.insertBefore(generateCard(c), firstVisibleElement);
+    });
+    rightCards = [...currentCards].reverse();
+    currentCards = [...newCards];
+  } else {
+    leftCards.forEach((c) => {
+      cardsContainer.insertBefore(generateCard(c), firstVisibleElement);
+    });
+    rightCards = [...currentCards];
+    currentCards = [...leftCards];
+    leftCards = [];
+  }
+  currentMarginLeft += getCardsOffsetBasedOnScreen();
+  setTimeout(() => {
+    carousel.style.transition = "1s";
+    carousel.style.marginLeft = currentMarginLeft + "px";
+  }, 100);
+  setTimeout(() => {
+    btnLeft.addEventListener("click", slideLeft);
+    btnRight.addEventListener("click", slideRight);
+  }, 1000);
+};
+
+const slideRight = () => {
+  btnLeft.removeEventListener("click", slideLeft);
+  btnRight.removeEventListener("click", slideRight);
+  if (rightCards.length === 0) {
+    // let visibleElements = getVisibleElements();
+    let newCards = [...generateCards(leftCards)];
+    newCards.forEach((c) => {
+      getVisibleElements()[getCardsSizeBasedOnScreen() - 1].after(
+        generateCard(c)
+      );
+    });
+    if (leftCards.length == 0) {
+      leftCards = [...currentCards];
+    } else {
+      leftCards = [...currentCards].reverse();
+    }
+
+    currentCards = [...newCards];
+  } else {
+    rightCards.forEach((c) => {
+      getVisibleElements()[getCardsSizeBasedOnScreen() - 1].after(
+        generateCard(c)
+      );
+    });
+    leftCards = [...currentCards];
+    currentCards = [...rightCards];
+    rightCards = [];
+  }
+  currentMarginLeft -= getCardsOffsetBasedOnScreen();
+  carousel.style.marginLeft = currentMarginLeft + "px";
+  setTimeout(() => {
+    btnLeft.addEventListener("click", slideLeft);
+    btnRight.addEventListener("click", slideRight);
+  }, 1000);
+};
+
+btnLeft.addEventListener("click", slideLeft);
+btnRight.addEventListener("click", slideRight);
+
+function getVisibleElements() {
+  const container = document.querySelector(".our-friends-section");
+  const elements = document.querySelectorAll(".cards-items__item-element");
+
+  const leftBoundary = container.getBoundingClientRect().left;
+  const rightBoundary = container.getBoundingClientRect().right;
+
+  const visibleElementsBetweenBoundaries = [];
+
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    const rect = element.getBoundingClientRect();
+
+    if (
+      rect.left >=
+        (leftBoundary + window.innerWidth > 1500
+          ? window.innerWidth / 10
+          : 0) &&
+      rect.right <= rightBoundary &&
+      rect.top >= 0 &&
+      rect.bottom <= window.innerHeight
+    ) {
+      // The element is between the boundaries and visible
+      visibleElementsBetweenBoundaries.push(element);
+    }
+  }
+  return visibleElementsBetweenBoundaries;
+}
+
+function generateCards(currentCards = []) {
+  return generateRandomCards(getCardsSizeBasedOnScreen(), currentCards);
+}
+
+function generateCardsOnLoadAndResize() {
+  let newCards = generateCards(currentCards);
+  newCards.forEach((c) => {
+    cardsContainer.appendChild(generateCard(c));
+  });
+  currentCards = newCards;
+}
+
+function generateCard(cardInfo) {
+  const box = document.createElement("div");
+  box.classList.add("cards-items__item-element");
+  box.classList.add(cardInfo.name);
+  box.innerHTML = `
+                    <img src="${
+                      cardInfo.src
+                    }" class="cards-items__animals" alt="${cardInfo.name}">
+                  <div class="cards-items__background">
+                    <p class="cards-items__pets-name">${
+                      cardInfo.name.charAt(0).toUpperCase() +
+                      cardInfo.name.slice(1)
+                    }</p>
+                    <div class="cards-items__btn-padding">
+                      <button class="main-button main-button_lern-more">
+                        Learn more
+                      </button>
+                    </div>
+                  </div>
+                  `;
+  addPopup(box);
+  return box;
+}
+
+generateCardsOnLoadAndResize();
+
+// let currentSize = window.screen.width;
+window.addEventListener("resize", () => {
+  if (currentSize == getCardsSizeBasedOnScreen()) return;
+  currentSize = getCardsSizeBasedOnScreen();
+  currentMarginLeft = 0;
+  currentOffSetLeft = 0;
+  carousel.style.marginLeft = "0px";
+  carousel.style.left = "0px";
+  cardsContainer.innerHTML = "";
+  carousel.style.transition = "0s";
+  leftCards = [];
+  rightCards = [];
+  cardsInfo = innitialCards;
+  generateCardsOnLoadAndResize();
+  carousel.style.transition = "1s";
+});
+
+function generateRandomCards(cardsNumber, usedElement) {
+  const newArray = [];
+  cardsInfo = cardsInfo.concat(usedElement);
+  while (newArray.length < cardsNumber) {
+    const randomIndex = Math.floor(Math.random() * cardsInfo.length);
+    const randomElement = cardsInfo[randomIndex];
+
+    if (
+      !newArray.some(
+        (element) => JSON.stringify(element) === JSON.stringify(randomElement)
+      )
+    ) {
+      newArray.push(randomElement);
+    }
+  }
+
+  // Remove the 3 elements from the original array
+  cardsInfo = cardsInfo.filter(
+    (element) =>
+      !newArray.some(
+        (newElement) => JSON.stringify(newElement) === JSON.stringify(element)
+      )
+  );
+  return newArray;
+}
+
+function getCardsSizeBasedOnScreen() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth >= 1280) {
+    return 3;
+  } else if (screenWidth >= 768) {
+    return 2;
+  } else {
+    return 1;
+  }
+}
+
+function getCardsOffsetBasedOnScreen() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth >= 1280) {
+    return 1080;
+  } else if (screenWidth >= 768) {
+    return 610;
+  } else {
+    return 310;
+  }
+}
+
+// carousel.addEventListener("animationend", (animation) => {
+//   if (animation.animationName === "to-left") {
+//     cardsImage.innerHTML = "";
+//     cardsName.innerHTML = "";
+//     cardsImage.innerHTML = "<img src='../../assets/images/jennifer.png'>";
+//     cardsName.innerHTML = "Jennifer";
+//     carousel.classList.remove("slide-left");
+//   } else if (animation.animationName === "to-right") {
+//     carousel.classList.remove("slide-right");
 //   }
-// });
 
-// popupWrap.addEventListener("click", function (event) {
-//   console.log(1);
-//   html.classList.remove("body__active");
-//   popupWrap.classList.remove("popup-wrap__active");
-//   modalWindow.classList.remove("popup__active");
-// });
-
-// popupContent.addEventListener("click", function (e) {
-
-// });
-
-// document.addEventListener("click", (event) => {
-//   if (event.target !== cardPet) {
-//     html.classList.remove("body__active");
-//     modalWindow.classList.remove("popup__active");
-//   }
+//   btnLeft.addEventListener("click", slideLeft);
+//   btnRight.addEventListener("click", slideRight);
 // });
